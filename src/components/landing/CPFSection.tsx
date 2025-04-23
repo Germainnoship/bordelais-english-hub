@@ -2,7 +2,7 @@
 import { Check } from "lucide-react";
 export default function CPFSection() {
   return (
-    <section className="py-10 px-4">
+    <section className="py-10 px-4 font-sans">
       <div className="container max-w-3xl mx-auto bg-blue-50 rounded-xl shadow flex flex-col md:flex-row items-center gap-6 p-8 border border-blue-200 animate-fade-in">
         <div className="flex-1">
           <h3 className="text-xl font-bold mb-2 text-blue-800">
@@ -15,7 +15,8 @@ export default function CPFSection() {
           </ul>
         </div>
         <div className="flex-1 flex justify-center">
-          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=320&q=80" alt="CPF anglais Bordeaux" className="w-32 h-32 rounded-full shadow object-cover" />
+          {/* Image d'une personne devant un ordinateur */}
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=320&q=80" alt="Formation CPF en ligne" className="w-32 h-32 rounded-full shadow object-cover" />
         </div>
       </div>
     </section>
