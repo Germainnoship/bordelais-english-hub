@@ -6,13 +6,13 @@ const formations = [
     title: "Formation Anglais intensive",
     icon: <Book size={32} className="text-[#0367A6]" />,
     description:
-      "Apprentissage intensif, progrès rapides et suivi personnalisé pour tous niveaux.",
+      "Apprentissage intensif, progrès rapides et suivi personnalisé pour tous niveaux. Parlez anglais en 90 jours.",
   },
   {
     title: "Préparation TOEIC",
     icon: <ListOrdered size={32} className="text-[#F3AE02]" />,
     description:
-      "Entrainement ciblé, astuces, examens blancs et passage de la certification.",
+      "Entrainement ciblé, méthodes de réussite, bonnes pratiques, examens blancs et passage de la certification.",
   },
   {
     title: "Formation Linguaskill",
@@ -24,7 +24,7 @@ const formations = [
     title: "Formation Anglais professionnel",
     icon: <Book size={32} className="text-[#F3AE02]" />,
     description:
-      "Développez vos compétences pour le monde du travail : vocabulaire métier et communication.",
+      "Maîtrisez l’anglais en milieu professionnel pour vous créer de nombreuses opportunités.",
   },
 ];
 

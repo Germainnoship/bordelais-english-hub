@@ -1,17 +1,18 @@
 
 import { CheckCircle } from "lucide-react";
+
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden min-h-[60vh] flex flex-col items-center justify-center text-center px-6 py-24 bg-gradient-to-br from-[#e2effa] via-[#fafbfb] to-[#e7f5fe] animate-fade-in font-sans">
+    <section className="relative overflow-hidden min-h-[60vh] flex flex-col items-center justify-center text-center px-6 py-24 bg-white font-sans">
       <div className="max-w-2xl z-10">
         <h1 className="font-bold text-4xl md:text-5xl mb-6 text-[#0367A6] leading-tight font-sans">
-          Maîtrisez l’anglais en ligne<br className="hidden md:inline" />
-          <span className="inline-block text-transparent bg-gradient-to-r from-[#0367A6] via-[#0367A6] to-[#F3AE02] bg-clip-text">
-            Formation certifiante éligible CPF
+          Maîtrisez l’anglais et faites décoller votre carrière<br className="hidden md:inline" />
+          <span className="inline-block text-[#F3AE02]">
+            Formation Certifiante
           </span>
         </h1>
         <p className="text-lg md:text-xl text-gray-700 mb-8 font-sans">
-          Adulte, étudiant, pro ou demandeur d’emploi&nbsp;: boostez votre carrière grâce à l’anglais !
+          Professionnel, particulier ou en reconversion : ne laissez plus l’anglais freiner votre carrière, vos voyages ou vos projets.
         </p>
         <a
           href="#lead-form"
@@ -21,14 +22,15 @@ export default function HeroSection() {
         </a>
         <div className="flex flex-col md:flex-row justify-center items-center gap-4 mt-8">
           <div className="flex items-center text-[#0367A6] font-medium gap-2">
-            <CheckCircle size={22} className="text-green-600" /> Prise en charge 100% CPF possible
+            <CheckCircle size={22} className="text-green-600" /> Financement CPF
           </div>
           <div className="flex items-center text-[#0367A6] font-medium gap-2">
-            <CheckCircle size={22} className="text-green-600" /> Parcours personnalisé
+            <CheckCircle size={22} className="text-green-600" /> Formation 100% adaptée à vos besoins
           </div>
         </div>
       </div>
-      <div className="absolute inset-0 opacity-25 pointer-events-none bg-[url('https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center"></div>
+      <div className="absolute inset-0 opacity-25 pointer-events-none bg-[url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center"></div>
     </section>
   );
 }
+

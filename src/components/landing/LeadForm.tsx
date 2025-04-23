@@ -1,7 +1,7 @@
 
 import * as React from "react";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, Book, User } from "lucide-react";
+import { Mail, Phone, Book, User, List } from "lucide-react";
 
 export default function LeadForm() {
   const { toast } = useToast();
@@ -72,6 +72,7 @@ export default function LeadForm() {
             </div>
             <div className="flex items-center gap-2">
               <Book className="text-[#F3AE02]" size={20} />
+              <List className="text-[#0367A6]" size={18} />
               <select
                 name="formation"
                 required
