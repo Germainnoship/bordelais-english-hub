@@ -38,7 +38,7 @@ export default function FormationsSection() {
         {formations.map((f, i) => (
           <div
             key={f.title}
-            className="bg-white rounded-xl shadow p-6 flex flex-col items-center border border-white/20 animate-fade-in"
+            className="bg-white rounded-xl shadow p-6 flex flex-col items-center border border-white/20 animate-fade-in hover:transform hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer"
             style={{ animationDelay: `${i * 60}ms` }}
           >
             <div className="mb-2">{f.icon}</div>

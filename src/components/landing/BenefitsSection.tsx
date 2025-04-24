@@ -6,16 +6,19 @@ const benefits = [
     icon: Users,
     title: "Ouvert à tous",
     text: "Adulte, étudiant, professionnel ou demandeur d'emploi.",
+    subtitle: "Un accompagnement ajusté à votre profil, vos objectifs et votre rythme pour des résultats concrets.",
   },
   {
     icon: GraduationCap,
     title: "Formateurs natifs",
     text: "Experts pédagogiques, suivi individualisé, immersion orale.",
+    subtitle: "Formateur natif dédié, suivi individualisé, immersion orale dès le premier cours + Accès à notre plateforme e-learning pour progresser à votre rythme, en toute autonomie.",
   },
   {
     icon: BookOpen,
-    title: "Méthode accélérée",
+    title: "En ligne ou en Présentiel",
     text: "Parcours adaptés à chaque niveau, progression rapide.",
+    subtitle: "Formez-vous en ligne ou en présentiel : nos formations s'adaptent à votre rythme et à votre situation.",
   },
   {
     icon: CheckCheck,
@@ -35,6 +38,9 @@ export default function BenefitsSection() {
           <b.icon className="text-violet-600 mb-4" size={38} />
           <h3 className="font-semibold text-lg mb-2">{b.title}</h3>
           <p className="text-gray-600 text-sm text-center">{b.text}</p>
+          {b.subtitle && (
+            <p className="text-gray-600 text-sm text-center mt-2">{b.subtitle}</p>
+          )}
         </div>
       ))}
     </div>

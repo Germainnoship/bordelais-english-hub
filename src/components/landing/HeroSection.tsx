@@ -1,3 +1,4 @@
+
 import { CheckCircle, Star } from "lucide-react";
 
 export default function HeroSection() {
@@ -35,8 +36,8 @@ export default function HeroSection() {
             <Star 
               key={i} 
               size={20} 
-              fill={i < 4 ? "#F3AE02" : "#F3AE02"}
-              className={i < 4 ? "text-[#F3AE02]" : "text-gray-300"} 
+              fill={i < 4 ? "#FABC05" : "#FABC05"}
+              className={i < 4 ? "text-[#FABC05]" : "text-gray-300"} 
             />
           ))}
         </div>
