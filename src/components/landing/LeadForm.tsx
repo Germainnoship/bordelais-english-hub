@@ -1,4 +1,3 @@
-
 import * as React from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, Book, User, List } from "lucide-react";
@@ -71,12 +70,12 @@ export default function LeadForm() {
               />
             </div>
             <div className="flex items-center gap-2">
-              <Book className="text-[#F3AE02]" size={20} />
-              <List className="text-[#0367A6]" size={18} />
+              <Book className="text-[#0367A6]" size={20} />
+              <List className="text-[#F3AE02]" size={18} />
               <select
                 name="formation"
                 required
-                className="flex-1 px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#0367A6] bg-white font-sans"
+                className="flex-1 px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#0367A6] bg-white font-sans h-[42px]"
                 disabled={sent}
               >
                 <option value="">Type de formation souhaitée</option>
