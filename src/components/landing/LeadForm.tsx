@@ -16,7 +16,7 @@ export default function LeadForm() {
   }
 
   return (
-    <div className="bg-blue-50 rounded-xl shadow-lg p-8 border-2 border-[#0367A6]/25">
+    <div className="bg-blue-50 rounded-xl shadow-lg p-8 border-2 border-[#0367A6]/25 space-y-4">
       <h3 className="font-bold text-2xl mb-6 text-[#0367A6] font-sans">
         Téléchargez votre brochure de formation et découvrez le plan qui vous fera progresser
       </h3>
@@ -91,6 +91,14 @@ export default function LeadForm() {
       <p className="text-xs mt-4 text-gray-500 text-center">
         * Nous ne partageons jamais vos données. Traitement confidentiel.
       </p>
+      <div className="mt-4 bg-white rounded-xl p-4 border border-blue-200 flex items-center gap-4">
+        <div className="flex-1">
+          <h4 className="font-semibold text-blue-800 mb-2">Formation éligible au CPF</h4>
+          <p className="text-sm text-blue-900">
+            Simplifiez votre parcours de formation et bénéficiez d'un accompagnement administratif complet.
+          </p>
+        </div>
+      </div>
     </div>
   );
 }
