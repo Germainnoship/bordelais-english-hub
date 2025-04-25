@@ -47,6 +47,14 @@ export default function FormationsSection() {
           </div>
         ))}
       </div>
+      <div className="mt-12 text-center">
+        <a
+          href="#formations"
+          className="inline-block px-8 py-4 font-semibold rounded-xl shadow-md bg-[#F3AE02] text-[#0367A6] hover:bg-white hover:text-[#0367A6] transition-colors hover-scale animate-fade-in"
+        >
+          Découvrir nos formations
+        </a>
+      </div>
     </div>
   );
 }

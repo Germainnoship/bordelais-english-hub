@@ -1,3 +1,4 @@
+
 import * as React from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, Book, User } from "lucide-react";
@@ -98,15 +99,15 @@ export default function LeadForm() {
             Simplifiez votre parcours de formation et bénéficiez d'un accompagnement administratif complet.
           </p>
         </div>
-        <div className="mt-4 flex justify-between items-center">
-          <img 
-            src="/lovable-uploads/df5d0402-913b-432b-9de9-2bc9abfa2562.png" 
-            alt="Qualiopi" 
-            className="h-16 object-contain"
-          />
+        <div className="mt-4 flex justify-center items-center gap-4">
           <img 
             src="/lovable-uploads/84f7d8eb-7e38-44b1-8ffd-11fbb49688d9.png" 
             alt="Mon Compte Formation" 
+            className="h-16 object-contain"
+          />
+          <img 
+            src="/lovable-uploads/df5d0402-913b-432b-9de9-2bc9abfa2562.png" 
+            alt="Qualiopi" 
             className="h-16 object-contain"
           />
         </div>
