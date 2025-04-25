@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function LogosSection() {
   return (
-    <div className="py-8 px-4">
+    <div className="py-4 bg-white">
       <div className="container mx-auto max-w-4xl">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
           <img 

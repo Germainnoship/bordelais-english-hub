@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, Book, User, List } from "lucide-react";
+import { Mail, Phone, Book, User } from "lucide-react";
 
 export default function LeadForm() {
   const { toast } = useToast();
@@ -85,18 +85,30 @@ export default function LeadForm() {
           className="mt-2 w-full bg-[#F3AE02] text-white font-semibold py-3 rounded-lg hover:bg-[#0367A6] hover:text-white transition hover-scale"
           disabled={sent}
         >
-          {sent ? "Merci !" : "Recevoir ma brochure personnalisée / Être rappelé(e)"}
+          {sent ? "Merci !" : "Télécharger ma brochure maintenant"}
         </button>
       </form>
       <p className="text-xs mt-4 text-gray-500 text-center">
         * Nous ne partageons jamais vos données. Traitement confidentiel.
       </p>
-      <div className="mt-4 bg-white rounded-xl p-4 border border-blue-200 flex items-center gap-4">
-        <div className="flex-1">
+      <div className="mt-4 bg-white rounded-xl p-4 border border-blue-200">
+        <div className="flex flex-1 flex-col">
           <h4 className="font-semibold text-blue-800 mb-2">Formation éligible au CPF</h4>
           <p className="text-sm text-blue-900">
             Simplifiez votre parcours de formation et bénéficiez d'un accompagnement administratif complet.
           </p>
+        </div>
+        <div className="mt-4 flex justify-between items-center">
+          <img 
+            src="/lovable-uploads/df5d0402-913b-432b-9de9-2bc9abfa2562.png" 
+            alt="Qualiopi" 
+            className="h-16 object-contain"
+          />
+          <img 
+            src="/lovable-uploads/84f7d8eb-7e38-44b1-8ffd-11fbb49688d9.png" 
+            alt="Mon Compte Formation" 
+            className="h-16 object-contain"
+          />
         </div>
       </div>
     </div>
