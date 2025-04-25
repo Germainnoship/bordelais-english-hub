@@ -82,7 +82,7 @@ export default function LeadForm() {
         </div>
         <button
           type="submit"
-          className="mt-2 w-full bg-[#F3AE02] text-[#0367A6] font-semibold py-3 rounded-lg hover:bg-[#0367A6] hover:text-[#F3AE02] transition hover-scale"
+          className="mt-2 w-full bg-[#F3AE02] text-white font-semibold py-3 rounded-lg hover:bg-[#0367A6] hover:text-white transition hover-scale"
           disabled={sent}
         >
           {sent ? "Merci !" : "Recevoir ma brochure personnalisée / Être rappelé(e)"}
