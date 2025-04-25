@@ -8,13 +8,14 @@ import MethodSection from "@/components/landing/MethodSection";
 import CPFSection from "@/components/landing/CPFSection";
 import Footer from "@/components/landing/Footer";
 import LogosSection from "@/components/landing/LogosSection";
+import LearningMethodSection from "@/components/landing/LearningMethodSection";
 
 const Index = () => {
   return (
     <main className="min-h-screen w-full bg-gray-100 font-sans">
       <HeroSection />
       <LogosSection />
-      <section className="bg-white py-16">
+      <section className="bg-white pt-8">
         <div className="container mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <BenefitsSection />
@@ -25,6 +26,7 @@ const Index = () => {
           </div>
         </div>
       </section>
+      <LearningMethodSection />
       <TestimonialsSection />
       <MethodSection />
       <CPFSection />
