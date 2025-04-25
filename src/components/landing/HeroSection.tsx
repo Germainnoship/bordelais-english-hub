@@ -1,3 +1,4 @@
+
 import { CheckCircle, Star } from "lucide-react";
 
 export default function HeroSection() {
@@ -29,20 +30,18 @@ export default function HeroSection() {
         </div>
       </div>
       <div className="absolute inset-0 opacity-25 pointer-events-none bg-[url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center"></div>
-      <div className="mt-8 bg-white px-6 py-3 rounded-xl shadow-sm border border-gray-100">
-        <div className="flex items-center gap-2">
-          <div className="flex">
-            {[...Array(5)].map((_, i) => (
-              <Star 
-                key={i} 
-                size={20} 
-                fill={i < 4 ? "#FABC05" : "#FABC05"}
-                className={i < 4 ? "text-[#FABC05]" : "text-gray-300"} 
-              />
-            ))}
-          </div>
-          <span className="font-semibold text-gray-700">4.7/5 sur Google</span>
+      <div className="mt-8 flex items-center gap-2 bg-white px-4 py-2 rounded-lg shadow-sm">
+        <div className="flex">
+          {[...Array(5)].map((_, i) => (
+            <Star 
+              key={i} 
+              size={20} 
+              fill={i < 4 ? "#FABC05" : "#FABC05"}
+              className={i < 4 ? "text-[#FABC05]" : "text-gray-300"} 
+            />
+          ))}
         </div>
+        <span className="font-semibold text-gray-700">4.7/5 sur Google</span>
       </div>
     </section>
   );
