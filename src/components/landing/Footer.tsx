@@ -1,13 +1,19 @@
-
 import { Mail, Phone } from "lucide-react";
 
 export default function Footer() {
   return (
     <footer className="py-8 px-4 bg-[#0367A6] text-white font-sans">
       <div className="container max-w-4xl flex flex-col md:flex-row justify-between items-center gap-3 mx-auto text-sm">
-        <div className="flex items-center gap-2">
-          <b>Bordelais English Hub</b>
-          <span className="ml-2">| Bordeaux</span>
+        <div className="flex items-center gap-4">
+          <img 
+            src="/lovable-uploads/febafbf7-d67d-4dd5-9585-98d2186d1dd5.png" 
+            alt="Langues Faciles Logo" 
+            className="h-12 object-contain"
+          />
+          <div className="flex items-center gap-2">
+            <b>Bordelais English Hub</b>
+            <span className="ml-2">| Bordeaux</span>
+          </div>
         </div>
         <div className="flex flex-col md:flex-row gap-2 md:gap-4 items-center">
           <span className="flex items-center gap-1">
