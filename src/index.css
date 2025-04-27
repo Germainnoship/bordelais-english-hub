@@ -104,4 +104,11 @@
   .cta-button {
     @apply text-white hover:text-white;
   }
+
+  [class*="bg-[#F3AE02]"], 
+  [class*="hover:bg-[#F3AE02]"],
+  [class*="bg-[#0367A6]"],
+  [class*="hover:bg-[#0367A6]"] {
+    @apply text-white hover:text-white;
+  }
 }
