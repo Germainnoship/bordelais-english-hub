@@ -93,25 +93,23 @@ export default function LeadForm() {
         * Nous ne partageons jamais vos données. Traitement confidentiel.
       </p>
       <div className="mt-4 bg-white rounded-xl p-4 border border-blue-200">
-        <div className="flex items-center gap-4">
-          <div className="flex gap-4">
-            <img 
-              src="/lovable-uploads/84f7d8eb-7e38-44b1-8ffd-11fbb49688d9.png" 
-              alt="Mon Compte Formation" 
-              className="h-16 object-contain"
-            />
-            <img 
-              src="/lovable-uploads/df5d0402-913b-432b-9de9-2bc9abfa2562.png" 
-              alt="Qualiopi" 
-              className="h-16 object-contain"
-            />
-          </div>
-          <div className="flex-1">
-            <h4 className="font-semibold text-blue-800 mb-2">Formation éligible au CPF</h4>
-            <p className="text-sm text-blue-900">
-              Simplifiez votre parcours de formation et bénéficiez d'un accompagnement administratif complet.
-            </p>
-          </div>
+        <div className="flex flex-1 flex-col">
+          <h4 className="font-semibold text-blue-800 mb-2">Formation éligible au CPF</h4>
+          <p className="text-sm text-blue-900">
+            Simplifiez votre parcours de formation et bénéficiez d'un accompagnement administratif complet.
+          </p>
+        </div>
+        <div className="mt-4 flex justify-center items-center gap-4">
+          <img 
+            src="/lovable-uploads/84f7d8eb-7e38-44b1-8ffd-11fbb49688d9.png" 
+            alt="Mon Compte Formation" 
+            className="h-16 object-contain"
+          />
+          <img 
+            src="/lovable-uploads/df5d0402-913b-432b-9de9-2bc9abfa2562.png" 
+            alt="Qualiopi" 
+            className="h-16 object-contain"
+          />
         </div>
       </div>
     </div>
