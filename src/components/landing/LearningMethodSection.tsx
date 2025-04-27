@@ -60,10 +60,7 @@ export default function LearningMethodSection() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center gap-6">
-          <p className="text-2xl font-semibold text-[#0367A6] text-center">
-            Et si vous changiez enfin de méthode ?
-          </p>
+        <div className="flex justify-center">
           <a
             href="#contact"
             className="inline-block px-8 py-4 font-semibold rounded-xl shadow-md bg-[#F3AE02] text-[#0367A6] hover:bg-[#0367A6] hover:text-white transition-colors animate-fade-in"
