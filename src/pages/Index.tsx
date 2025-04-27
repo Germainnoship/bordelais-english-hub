@@ -1,4 +1,3 @@
-
 import HeroSection from "@/components/landing/HeroSection";
 import FormationsSection from "@/components/landing/FormationsSection";
 import LeadForm from "@/components/landing/LeadForm";
@@ -9,6 +8,7 @@ import CPFSection from "@/components/landing/CPFSection";
 import Footer from "@/components/landing/Footer";
 import LogosSection from "@/components/landing/LogosSection";
 import LearningMethodSection from "@/components/landing/LearningMethodSection";
+import StatsBanner from "@/components/landing/StatsBanner";
 
 const Index = () => {
   return (
@@ -28,10 +28,12 @@ const Index = () => {
       </section>
       <LearningMethodSection />
       <TestimonialsSection />
+      <StatsBanner />
       <MethodSection />
       <CPFSection />
       <Footer />
     </main>
   );
 };
+
 export default Index;

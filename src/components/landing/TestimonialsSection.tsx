@@ -1,4 +1,3 @@
-
 import { MessageSquare } from "lucide-react";
 
 const testimonials = [
@@ -23,12 +22,10 @@ export default function TestimonialsSection() {
   return (
     <section className="py-14 bg-gradient-to-br from-violet-100 via-blue-50 to-white font-sans">
       <div className="container max-w-3xl mx-auto">
-        <div className="mb-12 flex justify-center">
-          <div className="inline-flex items-center gap-2 bg-blue-50 rounded-lg shadow px-6 py-4 font-semibold text-blue-700 text-base animate-fade-in border border-blue-100">
-            <span role="img" aria-label="groupe"><span className="text-2xl">👥</span></span>
-            +6 400 personnes formées depuis 2019
-          </div>
-        </div>
+        <h2 className="text-3xl font-bold text-center text-blue-800 mb-12 flex items-center justify-center gap-2">
+          <span role="img" aria-label="groupe" className="text-2xl">👥</span>
+          +6 400 personnes formées depuis 2019
+        </h2>
         <div className="grid gap-8 md:grid-cols-3">
           {testimonials.map((t, i) => (
             <div key={i} className="bg-white rounded-xl p-6 shadow animate-fade-in flex flex-col items-center">

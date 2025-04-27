@@ -1,4 +1,3 @@
-
 import { Check, X } from "lucide-react";
 
 export default function LearningMethodSection() {
@@ -63,7 +62,7 @@ export default function LearningMethodSection() {
         <div className="flex justify-center">
           <a
             href="#contact"
-            className="inline-block px-8 py-4 font-semibold rounded-xl shadow-md bg-[#F3AE02] text-[#0367A6] hover:bg-[#0367A6] hover:text-white transition-colors animate-fade-in"
+            className="inline-block px-8 py-4 font-semibold rounded-xl shadow-md bg-[#F3AE02] text-white hover:bg-[#0367A6] hover:text-white transition-colors animate-fade-in"
           >
             Découvrir la méthode Langues Faciles
           </a>
