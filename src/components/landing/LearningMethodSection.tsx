@@ -1,3 +1,4 @@
+
 import { Check, X } from "lucide-react";
 
 export default function LearningMethodSection() {
@@ -27,45 +28,47 @@ export default function LearningMethodSection() {
           Changez de méthode. Changez vos résultats.
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          {/* Méthode classique */}
-          <div className="bg-white/80 backdrop-blur p-6 md:p-8 rounded-2xl shadow-sm">
-            <h3 className="text-xl font-semibold mb-6 text-gray-800 text-center">
-              Méthode classique
-            </h3>
-            <div className="space-y-4">
-              {methods.classic.map((method, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <X className="w-5 h-5 mt-1 flex-shrink-0 text-red-500" />
-                  <span className="text-gray-600">{method}</span>
-                </div>
-              ))}
+        <div className="bg-blue-50 p-6 rounded-2xl shadow-lg">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Méthode classique */}
+            <div className="bg-white/90 backdrop-blur p-6 rounded-xl">
+              <h3 className="text-xl font-semibold mb-6 text-gray-800 text-center">
+                Méthode classique
+              </h3>
+              <div className="space-y-4">
+                {methods.classic.map((method, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <X className="w-5 h-5 mt-1 flex-shrink-0 text-red-500" />
+                    <span className="text-gray-600">{method}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Langues Faciles */}
+            <div className="bg-white p-6 rounded-xl">
+              <h3 className="text-xl font-semibold mb-6 text-[#0367A6] text-center">
+                Langues Faciles
+              </h3>
+              <div className="space-y-4">
+                {methods.languesFaciles.map((method, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <Check className="w-5 h-5 mt-1 flex-shrink-0 text-green-500" />
+                    <span className="text-gray-600">{method}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Langues Faciles */}
-          <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm">
-            <h3 className="text-xl font-semibold mb-6 text-[#0367A6] text-center">
-              Langues Faciles
-            </h3>
-            <div className="space-y-4">
-              {methods.languesFaciles.map((method, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <Check className="w-5 h-5 mt-1 flex-shrink-0 text-green-500" />
-                  <span className="text-gray-600">{method}</span>
-                </div>
-              ))}
-            </div>
+          <div className="flex justify-center mt-8">
+            <a
+              href="#contact"
+              className="inline-block px-8 py-4 font-semibold rounded-xl shadow-md bg-[#F3AE02] text-white hover:bg-[#0367A6] transition-colors animate-fade-in"
+            >
+              Découvrir la méthode Langues Faciles
+            </a>
           </div>
-        </div>
-
-        <div className="flex justify-center">
-          <a
-            href="#contact"
-            className="inline-block px-8 py-4 font-semibold rounded-xl shadow-md bg-[#F3AE02] text-white hover:bg-[#0367A6] hover:text-white transition-colors animate-fade-in"
-          >
-            Découvrir la méthode Langues Faciles
-          </a>
         </div>
       </div>
     </section>

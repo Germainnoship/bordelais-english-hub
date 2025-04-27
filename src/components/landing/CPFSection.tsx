@@ -16,7 +16,7 @@ export default function CPFSection() {
           </ul>
         </div>
         <div className="flex-1 flex justify-center">
-          <img src="/public/lovable-uploads/4de9eaf6-ff86-436e-8a16-ee31d6da685f.png" alt="Charte CPF" className="w-48 object-contain" />
+          <img src="/public/lovable-uploads/ef416070-b141-4d4b-a0b3-bc834b72cbc7.png" alt="Logo CPF" className="w-48 object-contain" />
         </div>
       </div>
     </section>
