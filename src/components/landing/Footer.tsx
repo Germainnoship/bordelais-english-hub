@@ -1,3 +1,4 @@
+
 import { Mail, Phone } from "lucide-react";
 
 export default function Footer() {
@@ -8,7 +9,7 @@ export default function Footer() {
           <img 
             src="/lovable-uploads/79eca677-6add-40bb-add4-450200969555.png"
             alt="Langues Faciles"
-            className="w-12 h-12 object-contain"
+            className="w-20 h-20 object-contain" // Increased from w-12 h-12
           />
           <b>Langues Faciles</b>
         </div>

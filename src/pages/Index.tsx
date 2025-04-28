@@ -1,3 +1,4 @@
+
 import HeroSection from "@/components/landing/HeroSection";
 import FormationsSection from "@/components/landing/FormationsSection";
 import LeadForm from "@/components/landing/LeadForm";
@@ -9,6 +10,7 @@ import Footer from "@/components/landing/Footer";
 import LogosSection from "@/components/landing/LogosSection";
 import LearningMethodSection from "@/components/landing/LearningMethodSection";
 import StatsBanner from "@/components/landing/StatsBanner";
+import TrainersSection from "@/components/landing/TrainersSection";
 
 const Index = () => {
   return (
@@ -30,6 +32,7 @@ const Index = () => {
       <TestimonialsSection />
       <StatsBanner />
       <MethodSection />
+      <TrainersSection />
       <CPFSection />
       <Footer />
     </main>

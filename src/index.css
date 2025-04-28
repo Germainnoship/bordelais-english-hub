@@ -102,6 +102,6 @@
 
 @layer components {
   .cta-button {
-    @apply text-white hover:text-white transition-colors;
+    @apply text-white hover:text-white !important transition-colors;
   }
 }
