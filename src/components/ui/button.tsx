@@ -45,9 +45,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const Comp = asChild ? Slot : "button"
     return (
       <Comp
-        className={cn(buttonVariants({ variant, size, className }), 
-          // Add this to ensure CTA buttons always have white text
-          props.className?.includes('cta-button') ? 'text-white hover:text-white' : ''
+        className={cn(
+          buttonVariants({ variant, size, className }),
+          className?.includes('cta-button') ? 'text-white hover:text-white' : ''
         )}
         ref={ref}
         {...props}

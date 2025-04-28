@@ -1,26 +1,70 @@
 
+import { BriefcaseIcon, TrendingUpIcon, AwardIcon } from "lucide-react";
+import { Button } from "../ui/button";
+
 export default function MethodSection() {
+  const advantages = [
+    {
+      icon: BriefcaseIcon,
+      title: "Boostez votre carrière",
+      content: "Accédez à des postes à plus hautes responsabilités, travaillez à l'international et valorisez votre profil sur un marché de plus en plus exigeant.",
+      color: "text-blue-600"
+    },
+    {
+      icon: TrendingUpIcon,
+      title: "Ouvrez de nouvelles portes",
+      content: "Changez de secteur, réussissez vos entretiens bilingues et facilitez votre reconversion professionnelle grâce à un anglais opérationnel.",
+      color: "text-green-600"
+    },
+    {
+      icon: AwardIcon,
+      title: "Gagnez en liberté",
+      content: "Soyez autonome lors de vos voyages, accédez à des contenus anglophones et enrichissez votre quotidien avec une compétence essentielle.",
+      color: "text-violet-600"
+    }
+  ];
+
   return (
-    <section className="py-16 bg-white">
-      <div className="container max-w-4xl mx-auto flex flex-col md:flex-row gap-10 items-center">
-        <div className="flex-1">
-          <h2 className="text-2xl font-bold mb-4 text-violet-700 font-playfair">
-            Une pédagogie axée sur la pratique
+    <section className="py-16 bg-gradient-to-b from-white to-blue-50/50">
+      <div className="container mx-auto px-4 max-w-5xl">
+        <div className="text-center mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+            Pourquoi se former en anglais change vraiment la donne ?
           </h2>
-          <p className="text-gray-700 mb-3">
-            Nos cours misent sur la conversation et des mises en situation réelles, pour gagner en aisance rapidement à l’oral comme à l’écrit.
-          </p>
-          <ul className="text-gray-600 mb-3 space-y-2">
-            <li>— Évaluation de niveau offerte</li>
-            <li>— Supports interactifs, ateliers, e-learning</li>
-            <li>— Suivi individuel, immersion personnalisée</li>
-          </ul>
-          <p className="text-sm text-gray-500">
-            ... (texte de présentation à compléter)
+          <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Que vous soyez professionnel, en reconversion ou particulier, maîtriser l'anglais 
+            ouvre des portes aujourd'hui inaccessibles. Découvrez ce que cela peut concrètement 
+            vous apporter.
           </p>
         </div>
-        <div className="flex-1 flex justify-center">
-          <img className="rounded-xl shadow-md w-full max-w-xs" src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=600&q=80" alt="Cours d'anglais" />
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          {advantages.map((advantage, index) => (
+            <div 
+              key={index}
+              className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow 
+                        border border-gray-100 flex flex-col"
+            >
+              <div className={`${advantage.color} mb-4`}>
+                <advantage.icon className="w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                {advantage.title}
+              </h3>
+              <p className="text-gray-600 flex-grow">
+                {advantage.content}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center">
+          <Button 
+            size="lg"
+            className="cta-button bg-blue-600 hover:bg-blue-700"
+          >
+            Je découvre ma formation idéale
+          </Button>
         </div>
       </div>
     </section>
