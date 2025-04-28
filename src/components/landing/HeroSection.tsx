@@ -28,7 +28,7 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-      <div className="absolute inset-0 opacity-25 pointer-events-none bg-[url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center"></div>
+      <div className="absolute inset-0 opacity-25 pointer-events-none bg-[url('https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center"></div>
       <div className="mt-8">
         <div className="inline-flex items-center gap-2 bg-white/95 backdrop-blur px-6 py-3 rounded-xl shadow">
           <div className="flex">

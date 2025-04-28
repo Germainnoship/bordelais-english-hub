@@ -11,6 +11,7 @@ import LogosSection from "@/components/landing/LogosSection";
 import LearningMethodSection from "@/components/landing/LearningMethodSection";
 import StatsBanner from "@/components/landing/StatsBanner";
 import TrainersSection from "@/components/landing/TrainersSection";
+import FinalCTA from "@/components/landing/FinalCTA";
 
 const Index = () => {
   return (
@@ -34,6 +35,7 @@ const Index = () => {
       <MethodSection />
       <TrainersSection />
       <CPFSection />
+      <FinalCTA />
       <Footer />
     </main>
   );
