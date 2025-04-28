@@ -1,4 +1,3 @@
-
 import { Check, X } from "lucide-react";
 
 export default function LearningMethodSection() {
@@ -31,7 +30,7 @@ export default function LearningMethodSection() {
         <div className="bg-blue-50 p-6 rounded-2xl shadow-lg">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Méthode classique */}
-            <div className="bg-white/90 backdrop-blur p-6 rounded-xl">
+            <div className="bg-white/90 backdrop-blur p-6 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-xl">
               <h3 className="text-xl font-semibold mb-6 text-gray-800 text-center">
                 Méthode classique
               </h3>
@@ -46,7 +45,7 @@ export default function LearningMethodSection() {
             </div>
 
             {/* Langues Faciles */}
-            <div className="bg-white p-6 rounded-xl">
+            <div className="bg-white p-6 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-xl">
               <h3 className="text-xl font-semibold mb-6 text-[#0367A6] text-center">
                 Langues Faciles
               </h3>
@@ -64,7 +63,7 @@ export default function LearningMethodSection() {
           <div className="flex justify-center mt-8">
             <a
               href="#contact"
-              className="inline-block px-8 py-4 font-semibold rounded-xl shadow-md bg-[#F3AE02] text-white hover:bg-[#0367A6] transition-colors animate-fade-in"
+              className="cta-button inline-block px-8 py-4 font-semibold rounded-xl shadow-md bg-[#F3AE02] hover:bg-[#0367A6] transition-colors animate-fade-in"
             >
               Découvrir la méthode Langues Faciles
             </a>
