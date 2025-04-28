@@ -8,7 +8,7 @@ export default function MethodSection() {
       icon: BriefcaseIcon,
       title: "Boostez votre carrière",
       content: "Accédez à des postes à plus hautes responsabilités, travaillez à l'international et valorisez votre profil sur un marché de plus en plus exigeant.",
-      color: "text-[#2463EB]"
+      color: "text-blue-600"
     },
     {
       icon: TrendingUpIcon,
@@ -28,7 +28,7 @@ export default function MethodSection() {
     <section className="py-16 bg-gradient-to-b from-white to-blue-50/50">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 font-playfair">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
             Pourquoi se former en anglais change vraiment la donne ?
           </h2>
           <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -48,7 +48,7 @@ export default function MethodSection() {
               <div className={`${advantage.color} mb-4`}>
                 <advantage.icon className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3 font-playfair">
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
                 {advantage.title}
               </h3>
               <p className="text-gray-600 flex-grow">
@@ -61,7 +61,7 @@ export default function MethodSection() {
         <div className="text-center">
           <Button 
             size="lg"
-            className="cta-button bg-[#2463EB] hover:bg-[#2463EB]/90"
+            className="cta-button bg-blue-600 hover:bg-blue-700"
           >
             Je découvre ma formation idéale
           </Button>
