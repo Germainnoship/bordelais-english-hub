@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -102,6 +103,7 @@
 
 @layer components {
   .cta-button {
-    @apply text-white hover:text-white !important transition-colors;
+    @apply text-white hover:text-white transition-colors;
   }
 }
+
