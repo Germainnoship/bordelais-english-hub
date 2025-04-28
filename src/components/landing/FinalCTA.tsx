@@ -5,7 +5,7 @@ export default function FinalCTA() {
   return (
     <section className="py-16 bg-gradient-to-b from-blue-50/50 to-white">
       <div className="container mx-auto px-4 max-w-3xl text-center">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 font-playfair">
           Prêt à faire décoller votre carrière ?
         </h2>
         <p className="text-gray-600 mb-8">
@@ -13,7 +13,7 @@ export default function FinalCTA() {
         </p>
         <Button 
           size="lg"
-          className="cta-button bg-blue-600 hover:bg-blue-700"
+          className="cta-button bg-[#2463EB] hover:bg-[#2463EB]/90"
         >
           Je commence ma formation
         </Button>
