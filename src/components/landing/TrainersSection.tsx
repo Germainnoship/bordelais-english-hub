@@ -28,7 +28,7 @@ export default function TrainersSection() {
   return (
     <section className="py-16 bg-white">
       <div className="container max-w-4xl mx-auto px-4">
-        <h2 className="text-2xl font-bold mb-12 text-center text-[#0367A6] font-playfair">
+        <h2 className="text-2xl md:text-3xl font-bold text-center text-[#2463EB] mb-12">
           Notre équipe de formateurs
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 justify-items-center">

@@ -10,7 +10,7 @@ const formations = [
   },
   {
     title: "Préparation TOEIC",
-    icon: <ListOrdered size={32} className="text-[#F3AE02]" />,
+    icon: <ListOrdered size={32} className="text-[#F87315]" />,
     description:
       "Entrainement ciblé, méthodes de réussite, bonnes pratiques, examens blancs et passage de la certification.",
   },
@@ -22,7 +22,7 @@ const formations = [
   },
   {
     title: "Formation Anglais professionnel",
-    icon: <Book size={32} className="text-[#F3AE02]" />,
+    icon: <Book size={32} className="text-[#F87315]" />,
     description:
       "Maîtrisez l'anglais en milieu professionnel pour vous créer de nombreuses opportunités.",
   },

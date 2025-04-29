@@ -47,8 +47,8 @@ export default function LearningMethodSection() {
 
             {/* Langues Faciles */}
             <div className="bg-white p-6 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-xl">
-              <h3 className="text-xl font-semibold mb-6 text-[#0367A6] text-center">
-                Langues Faciles
+              <h3 className="text-xl font-semibold mb-6 text-[#2463EB] text-center">
+                Méthode Langues Faciles
               </h3>
               <div className="space-y-4">
                 {methods.languesFaciles.map((method, index) => (
@@ -64,7 +64,7 @@ export default function LearningMethodSection() {
           <div className="flex justify-center mt-8">
             <a
               href="#contact"
-              className="cta-button inline-block px-8 py-4 font-semibold rounded-lg shadow-md bg-[#2463EB] text-white hover:bg-[#F87315] hover:text-white transition-colors animate-fade-in"
+              className="cta-button inline-block px-8 py-4 font-semibold rounded-lg shadow-md bg-[#F87315] text-white hover:bg-[#2463EB] hover:text-white transition-colors animate-fade-in"
             >
               Découvrir la méthode Langues Faciles
             </a>
