@@ -18,7 +18,7 @@ export default function LeadForm() {
 
   return (
     <div className="bg-blue-50 rounded-xl shadow-lg p-8 border-2 border-[#0367A6]/25 space-y-4">
-      <h3 className="font-bold text-2xl mb-6 text-[#0367A6] font-sans">
+      <h3 className="font-bold text-2xl mb-6 text-[#2463EB] font-sans text-center">
         Téléchargez votre brochure de formation et découvrez le plan qui vous fera progresser
       </h3>
       <form className="flex flex-col gap-4" onSubmit={handleSubmit} autoComplete="off">
@@ -83,7 +83,7 @@ export default function LeadForm() {
         </div>
         <button
           type="submit"
-          className="mt-2 w-full bg-[#F3AE02] text-white font-semibold py-3 rounded-lg hover:bg-[#0367A6] hover:text-white transition hover-scale"
+          className="mt-2 w-full bg-[#2463EB] text-white font-semibold py-3 rounded-lg hover:bg-[#0367A6] hover:text-white transition hover-scale"
           disabled={sent}
         >
           {sent ? "Merci !" : "Télécharger ma brochure maintenant"}

@@ -105,5 +105,8 @@
   .cta-button {
     @apply text-white hover:text-white transition-colors;
   }
-}
 
+  .hover-orange {
+    @apply hover:bg-orange-500;
+  }
+}
