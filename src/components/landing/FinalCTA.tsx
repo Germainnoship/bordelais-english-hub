@@ -13,7 +13,7 @@ export default function FinalCTA() {
         </p>
         <Button 
           size="lg"
-          className="cta-button bg-[#2463EB] hover:bg-orange-500 rounded-lg"
+          className="cta-button bg-[#2463EB] hover:bg-[#F87315] hover:text-white rounded-lg"
         >
           Je commence ma formation
         </Button>

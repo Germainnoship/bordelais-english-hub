@@ -50,7 +50,7 @@ export default function FormationsSection() {
       <div className="mt-12 text-center">
         <a
           href="#formations"
-          className="inline-block px-8 py-4 font-semibold rounded-lg shadow-md bg-[#2463EB] text-white hover:bg-white hover:text-[#0367A6] transition-colors hover-scale animate-fade-in"
+          className="inline-block px-8 py-4 font-semibold rounded-lg shadow-md bg-[#F87315] text-white hover:bg-white hover:text-[#2463EB] transition-colors hover-scale animate-fade-in"
         >
           Découvrir nos formations
         </a>

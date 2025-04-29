@@ -107,6 +107,6 @@
   }
 
   .hover-orange {
-    @apply hover:bg-orange-500;
+    @apply hover:bg-[#F87315];
   }
 }

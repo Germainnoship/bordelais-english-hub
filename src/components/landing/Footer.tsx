@@ -3,13 +3,13 @@ import { Mail, Phone } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="py-8 px-4 bg-[#0367A6] text-white font-sans">
+    <footer className="py-8 px-4 bg-[#2463EB] text-white font-sans">
       <div className="container max-w-4xl flex flex-col md:flex-row justify-between items-center gap-3 mx-auto text-sm">
         <div className="flex items-center gap-4">
           <img 
             src="/lovable-uploads/79eca677-6add-40bb-add4-450200969555.png"
             alt="Langues Faciles"
-            className="w-20 h-20 object-contain" // Increased from w-12 h-12
+            className="w-20 h-20 object-contain" 
           />
           <b>Langues Faciles</b>
         </div>
