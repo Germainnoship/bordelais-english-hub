@@ -21,10 +21,10 @@ export default function HeroSection() {
           Télécharger la brochure
         </a>
         <div className="flex flex-col md:flex-row justify-center items-center gap-4 mt-8">
-          <div className="flex items-center text-[#0367A6] font-medium gap-2">
+          <div className="flex items-center text-[#2463EB] font-medium gap-2">
             <CheckCircle size={22} className="text-green-600" /> Financement CPF
           </div>
-          <div className="flex items-center text-[#0367A6] font-medium gap-2">
+          <div className="flex items-center text-[#2463EB] font-medium gap-2">
             <CheckCircle size={22} className="text-green-600" /> Formation 100% adaptée à vos besoins
           </div>
         </div>

@@ -1,3 +1,4 @@
+
 import * as React from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, Book, User } from "lucide-react";
@@ -22,7 +23,7 @@ export default function LeadForm() {
       </h3>
       <form className="flex flex-col gap-4" onSubmit={handleSubmit} autoComplete="off">
         <div className="flex items-center gap-2">
-          <User className="text-[#F87315]" size={20} />
+          <User className="text-[#2463EB]" size={20} />
           <input
             required
             type="text"
@@ -33,7 +34,7 @@ export default function LeadForm() {
           />
         </div>
         <div className="flex items-center gap-2">
-          <User className="text-[#F87315]" size={20} />
+          <User className="text-[#2463EB]" size={20} />
           <input
             required
             type="text"
@@ -44,7 +45,7 @@ export default function LeadForm() {
           />
         </div>
         <div className="flex items-center gap-2">
-          <Mail className="text-[#F87315]" size={20} />
+          <Mail className="text-[#2463EB]" size={20} />
           <input
             required
             type="email"
@@ -55,7 +56,7 @@ export default function LeadForm() {
           />
         </div>
         <div className="flex items-center gap-2">
-          <Phone className="text-[#F87315]" size={20} />
+          <Phone className="text-[#2463EB]" size={20} />
           <input
             required
             type="tel"
@@ -67,7 +68,7 @@ export default function LeadForm() {
           />
         </div>
         <div className="flex items-center gap-2">
-          <Book className="text-[#F87315]" size={20} />
+          <Book className="text-[#2463EB]" size={20} />
           <select
             name="formation"
             required

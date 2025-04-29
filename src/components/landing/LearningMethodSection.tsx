@@ -24,7 +24,7 @@ export default function LearningMethodSection() {
   return (
     <section className="py-16 bg-gradient-to-b from-white to-blue-50">
       <div className="container mx-auto max-w-6xl px-4">
-        <h2 className="text-xl md:text-2xl font-bold text-center text-gray-900 mb-12">
+        <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-900 mb-12">
           Changez de méthode. Changez vos résultats.
         </h2>
         
@@ -64,7 +64,7 @@ export default function LearningMethodSection() {
           <div className="flex justify-center mt-8">
             <a
               href="#contact"
-              className="cta-button inline-block px-8 py-4 font-semibold rounded-lg shadow-md bg-[#F87315] text-white hover:bg-[#2463EB] hover:text-white transition-colors animate-fade-in"
+              className="inline-block px-8 py-4 font-semibold rounded-lg shadow-md bg-[#F87315] text-white hover:bg-[#2463EB] hover:text-white transition-colors animate-fade-in"
             >
               Découvrir la méthode Langues Faciles
             </a>
