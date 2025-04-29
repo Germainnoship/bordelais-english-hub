@@ -1,28 +1,28 @@
 
-import { Book, ListOrdered } from "lucide-react";
+import { TrendingUp, Award, GraduationCap, Briefcase } from "lucide-react";
 
 const formations = [
   {
     title: "Formation Anglais intensive",
-    icon: <Book size={32} className="text-[#2463EB]" />,
+    icon: <TrendingUp size={32} className="text-[#2463EB]" />,
     description:
       "Apprentissage intensif, progrès rapides et suivi personnalisé pour tous niveaux. Parlez anglais en 90 jours.",
   },
   {
     title: "Préparation TOEIC",
-    icon: <ListOrdered size={32} className="text-[#F87315]" />,
+    icon: <Award size={32} className="text-[#F87315]" />,
     description:
       "Entrainement ciblé, méthodes de réussite, bonnes pratiques, examens blancs et passage de la certification.",
   },
   {
     title: "Formation Linguaskill",
-    icon: <Book size={32} className="text-[#2463EB]" />,
+    icon: <GraduationCap size={32} className="text-[#2463EB]" />,
     description:
       "Préparation complète à Linguaskill, adaptée aux besoins académiques et professionnels.",
   },
   {
     title: "Formation Anglais professionnel",
-    icon: <Book size={32} className="text-[#F87315]" />,
+    icon: <Briefcase size={32} className="text-[#F87315]" />,
     description:
       "Maîtrisez l'anglais en milieu professionnel pour vous créer de nombreuses opportunités.",
   },
