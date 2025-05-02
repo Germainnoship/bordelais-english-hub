@@ -3,7 +3,7 @@ import { CheckCircle, Star } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden min-h-[60vh] flex items-center justify-between px-6 py-24 bg-white font-sans">
+    <section className="relative overflow-hidden min-h-[50vh] flex items-center justify-between px-6 py-16 bg-white font-sans">
       {/* Left side content */}
       <div className="z-10 max-w-xl">
         <h1 className="font-bold text-4xl md:text-5xl mb-6 text-[#2463EB] leading-tight font-sans text-left">
@@ -22,11 +22,11 @@ export default function HeroSection() {
           Télécharger la brochure
         </a>
         <div className="flex flex-col items-start gap-4 mt-8">
-          <div className="flex items-center text-[#2463EB] font-medium gap-2">
-            <CheckCircle size={22} className="text-[#2463EB]" /> Financement CPF
+          <div className="flex items-center text-gray-800 font-medium gap-2">
+            <CheckCircle size={22} className="text-green-500" /> Financement CPF
           </div>
-          <div className="flex items-center text-[#2463EB] font-medium gap-2">
-            <CheckCircle size={22} className="text-[#2463EB]" /> Formation 100% adaptée à vos besoins
+          <div className="flex items-center text-gray-800 font-medium gap-2">
+            <CheckCircle size={22} className="text-green-500" /> Formation 100% adaptée à vos besoins
           </div>
         </div>
         
@@ -49,11 +49,11 @@ export default function HeroSection() {
       
       {/* Right side image */}
       <div className="hidden md:block w-1/2 h-full absolute right-0 top-0 bottom-0">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center opacity-40"></div>
+        <div className="absolute inset-0 bg-[url('public/lovable-uploads/22388789-0797-4a5b-aa67-3d12455dc55e.png')] bg-cover bg-center opacity-80"></div>
       </div>
       
       {/* Background image for mobile only */}
-      <div className="absolute inset-0 opacity-25 pointer-events-none bg-[url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center md:hidden"></div>
+      <div className="absolute inset-0 opacity-25 pointer-events-none bg-[url('public/lovable-uploads/22388789-0797-4a5b-aa67-3d12455dc55e.png')] bg-cover bg-center md:hidden"></div>
     </section>
   );
 }
