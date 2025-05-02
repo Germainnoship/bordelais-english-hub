@@ -3,7 +3,7 @@ import { CheckCircle, Star } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden min-h-[50vh] flex items-center justify-between px-6 py-16 bg-white font-sans">
+    <section className="relative overflow-hidden min-h-[45vh] flex items-center justify-between px-6 py-12 bg-white font-sans">
       {/* Left side content */}
       <div className="z-10 max-w-xl">
         <h1 className="font-bold text-4xl md:text-5xl mb-6 text-[#2463EB] leading-tight font-sans text-left">
@@ -23,10 +23,12 @@ export default function HeroSection() {
         </a>
         <div className="flex flex-col items-start gap-4 mt-8">
           <div className="flex items-center text-gray-800 font-medium gap-2">
-            <CheckCircle size={22} className="text-green-500" /> Financement CPF
+            <CheckCircle size={22} className="text-green-500" /> 
+            <span className="text-gray-900">Financement CPF</span>
           </div>
           <div className="flex items-center text-gray-800 font-medium gap-2">
-            <CheckCircle size={22} className="text-green-500" /> Formation 100% adaptée à vos besoins
+            <CheckCircle size={22} className="text-green-500" /> 
+            <span className="text-gray-900">Formation 100% adaptée à vos besoins</span>
           </div>
         </div>
         
@@ -49,12 +51,12 @@ export default function HeroSection() {
       
       {/* Right side image */}
       <div className="hidden md:block w-1/2 h-full absolute right-0 top-0 bottom-0">
-        <div className="absolute inset-0 bg-[url('public/lovable-uploads/b787840e-aee8-4361-867a-4195ad81bf61.png')] bg-cover bg-center opacity-90"></div>
-        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-white/90"></div>
+        <div className="absolute inset-0 bg-[url('public/lovable-uploads/959cb640-5c82-4c63-9512-bfe699d31f8d.png')] bg-cover bg-center opacity-100"></div>
+        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-white/95"></div>
       </div>
       
       {/* Background image for mobile only */}
-      <div className="absolute inset-0 opacity-25 pointer-events-none bg-[url('public/lovable-uploads/b787840e-aee8-4361-867a-4195ad81bf61.png')] bg-cover bg-center md:hidden"></div>
+      <div className="absolute inset-0 opacity-25 pointer-events-none bg-[url('public/lovable-uploads/959cb640-5c82-4c63-9512-bfe699d31f8d.png')] bg-cover bg-center md:hidden"></div>
     </section>
   );
 }
