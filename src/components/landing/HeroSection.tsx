@@ -49,11 +49,12 @@ export default function HeroSection() {
       
       {/* Right side image */}
       <div className="hidden md:block w-1/2 h-full absolute right-0 top-0 bottom-0">
-        <div className="absolute inset-0 bg-[url('public/lovable-uploads/22388789-0797-4a5b-aa67-3d12455dc55e.png')] bg-cover bg-center opacity-80"></div>
+        <div className="absolute inset-0 bg-[url('public/lovable-uploads/b787840e-aee8-4361-867a-4195ad81bf61.png')] bg-cover bg-center opacity-90"></div>
+        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-white/90"></div>
       </div>
       
       {/* Background image for mobile only */}
-      <div className="absolute inset-0 opacity-25 pointer-events-none bg-[url('public/lovable-uploads/22388789-0797-4a5b-aa67-3d12455dc55e.png')] bg-cover bg-center md:hidden"></div>
+      <div className="absolute inset-0 opacity-25 pointer-events-none bg-[url('public/lovable-uploads/b787840e-aee8-4361-867a-4195ad81bf61.png')] bg-cover bg-center md:hidden"></div>
     </section>
   );
 }
