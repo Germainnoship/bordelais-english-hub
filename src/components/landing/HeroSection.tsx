@@ -4,6 +4,12 @@ import { CheckCircle, Star } from "lucide-react";
 export default function HeroSection() {
   return (
     <section className="relative overflow-hidden min-h-[45vh] flex items-center justify-between px-6 py-12 bg-white font-sans">
+      {/* Background image for all devices */}
+      <div className="absolute inset-0 bg-[url('public/lovable-uploads/f40c38f9-4423-45f7-9f10-babc3a495f38.png')] bg-cover bg-center bg-no-repeat opacity-100"></div>
+      
+      {/* Dark overlay to improve text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/75 to-transparent"></div>
+      
       {/* Left side content */}
       <div className="z-10 max-w-xl">
         <h1 className="font-bold text-4xl md:text-5xl mb-6 text-[#2463EB] leading-tight font-sans text-left">
@@ -48,15 +54,6 @@ export default function HeroSection() {
           </div>
         </div>
       </div>
-      
-      {/* Right side image */}
-      <div className="hidden md:block w-1/2 h-full absolute right-0 top-0 bottom-0">
-        <div className="absolute inset-0 bg-[url('public/lovable-uploads/959cb640-5c82-4c63-9512-bfe699d31f8d.png')] bg-cover bg-center opacity-100"></div>
-        <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-white/95"></div>
-      </div>
-      
-      {/* Background image for mobile only */}
-      <div className="absolute inset-0 opacity-25 pointer-events-none bg-[url('public/lovable-uploads/959cb640-5c82-4c63-9512-bfe699d31f8d.png')] bg-cover bg-center md:hidden"></div>
     </section>
   );
 }
