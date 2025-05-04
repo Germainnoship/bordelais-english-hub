@@ -5,8 +5,8 @@ export default function HeroSection() {
   return (
     <div className="font-sans">
       <section className="relative overflow-hidden min-h-[45vh] flex items-center justify-between px-6 py-12 bg-white">
-        {/* Background image using the uploaded image */}
-        <div className="absolute inset-0 bg-[url('public/lovable-uploads/6d538b63-37fd-4c2c-9cdc-a53db8390ae8.png')] bg-cover bg-center bg-no-repeat opacity-100"></div>
+        {/* Background image using a gradient instead of the unavailable image */}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-indigo-100 bg-cover bg-center bg-no-repeat opacity-100"></div>
         
         {/* Dark overlay to improve text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/75 to-transparent"></div>
@@ -57,11 +57,11 @@ export default function HeroSection() {
             </div>
           </div>
           
-          {/* Right side image */}
+          {/* Right side image - Updated to show a person taking an online English course */}
           <div className="hidden md:flex items-center justify-center relative z-10">
             <img 
-              src="/lovable-uploads/9c394211-7bd3-419a-af12-91c652724f25.png" 
-              alt="Formation en ligne" 
+              src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+              alt="Personne suivant une formation d'anglais en ligne" 
               className="max-w-full h-auto rounded-lg shadow-lg"
             />
           </div>
