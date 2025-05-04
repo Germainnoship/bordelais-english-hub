@@ -30,13 +30,6 @@ const Index = () => {
         </div>
       </section>
       <LearningMethodSection />
-      <div className="w-full bg-[#2463EB] text-white py-10 rounded-lg mx-4 my-8">
-        <div className="container mx-auto px-6">
-          <h2 className="text-2xl md:text-3xl font-bold text-center max-w-4xl mx-auto p-6">
-            Trouvez la formation adaptée à vos besoins, à vos objectifs et à votre rythme
-          </h2>
-        </div>
-      </div>
       <TestimonialsSection />
       <StatsBanner />
       <MethodSection />

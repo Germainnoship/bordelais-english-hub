@@ -30,7 +30,7 @@ const formations = [
 
 export default function FormationsSection() {
   return (
-    <div className="bg-[#2463EB] py-12 px-4">
+    <div className="bg-[#2463EB] py-12 px-4 rounded-xl">
       <h2 className="text-3xl font-bold text-center text-white mb-12 max-w-4xl mx-auto">
         Trouvez la formation adaptée à vos besoins, à vos objectifs et à votre rythme
       </h2>

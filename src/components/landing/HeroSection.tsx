@@ -6,7 +6,7 @@ export default function HeroSection() {
     <div className="font-sans">
       <section className="relative overflow-hidden min-h-[45vh] flex items-center justify-between px-6 py-12 bg-white">
         {/* Background image using the uploaded image */}
-        <div className="absolute inset-0 bg-[url('public/lovable-uploads/7d8afe7e-a4de-45ed-a262-d5db30201cea.png')] bg-cover bg-center bg-no-repeat opacity-100"></div>
+        <div className="absolute inset-0 bg-[url('public/lovable-uploads/6d538b63-37fd-4c2c-9cdc-a53db8390ae8.png')] bg-cover bg-center bg-no-repeat opacity-100"></div>
         
         {/* Dark overlay to improve text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/75 to-transparent"></div>
