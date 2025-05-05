@@ -60,7 +60,7 @@ export default function HeroSection() {
           {/* Right side image */}
           <div className="hidden md:flex items-center justify-center relative z-10">
             <img 
-              src="/lovable-uploads/b9ab3535-8f9e-46aa-9da7-35f2b428cf7a.png" 
+              src="/lovable-uploads/d322419d-1352-435c-8c86-6fcef3afafd4.png" 
               alt="Personne suivant une formation d'anglais en ligne" 
               className="max-w-full h-auto rounded-lg shadow-lg"
             />
