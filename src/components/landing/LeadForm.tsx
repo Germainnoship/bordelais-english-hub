@@ -6,9 +6,29 @@ import { Mail, Phone, Book, User } from "lucide-react";
 export default function LeadForm() {
   const { toast } = useToast();
   const [sent, setSent] = React.useState(false);
+  const [phoneError, setPhoneError] = React.useState("");
+
+  // Validate French phone number
+  const validatePhoneNumber = (phone: string) => {
+    // This regex matches French phone numbers in various formats
+    const phoneRegex = /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/;
+    return phoneRegex.test(phone);
+  };
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    
+    // Get the phone number from the form
+    const formData = new FormData(e.currentTarget);
+    const phoneNumber = formData.get("phone") as string;
+    
+    // Validate phone number
+    if (!validatePhoneNumber(phoneNumber)) {
+      setPhoneError("Veuillez entrer un numéro de téléphone français valide");
+      return;
+    }
+    
+    setPhoneError("");
     setSent(true);
     toast({
       title: "Merci !",
@@ -17,7 +37,7 @@ export default function LeadForm() {
   }
 
   return (
-    <div className="bg-blue-50 rounded-xl shadow-lg p-8 border-2 border-[#0367A6]/25 space-y-4">
+    <div id="lead-form" className="bg-blue-50 rounded-xl shadow-lg p-8 border-2 border-[#0367A6]/25 space-y-4">
       <h3 className="font-bold text-2xl mb-6 text-gray-900 font-sans text-center">
         Téléchargez votre brochure de formation et découvrez le plan qui vous fera progresser
       </h3>
@@ -55,17 +75,20 @@ export default function LeadForm() {
             disabled={sent}
           />
         </div>
-        <div className="flex items-center gap-2">
-          <Phone className="text-[#2463EB]" size={20} />
-          <input
-            required
-            type="tel"
-            name="phone"
-            placeholder="Votre téléphone"
-            pattern="(\+?\d{1,4}[-.\s]?|\d{0,4})?\d{9,}"
-            className="flex-1 h-12 px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#0367A6] bg-white font-sans"
-            disabled={sent}
-          />
+        <div className="flex flex-col w-full">
+          <div className="flex items-center gap-2">
+            <Phone className="text-[#2463EB]" size={20} />
+            <input
+              required
+              type="tel"
+              name="phone"
+              placeholder="Votre téléphone"
+              onChange={() => setPhoneError("")}
+              className={`flex-1 h-12 px-4 py-2 rounded border ${phoneError ? "border-red-400" : "border-blue-200"} focus:outline-none focus:ring-2 focus:ring-[#0367A6] bg-white font-sans`}
+              disabled={sent}
+            />
+          </div>
+          {phoneError && <p className="text-red-500 text-xs mt-1 ml-7">{phoneError}</p>}
         </div>
         <div className="flex items-center gap-2">
           <Book className="text-[#2463EB]" size={20} />

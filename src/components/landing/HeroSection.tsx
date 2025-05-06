@@ -61,12 +61,12 @@ export default function HeroSection() {
               </div>
             </div>
             
-            {/* Image section - now visible on mobile and matched with form width */}
+            {/* Image section - width adjusted to match form width */}
             <div className="flex items-center justify-center">
               <img 
                 src="/lovable-uploads/d322419d-1352-435c-8c86-6fcef3afafd4.png" 
                 alt="Personne suivant une formation d'anglais en ligne" 
-                className="w-full max-w-[480px] h-auto rounded-lg shadow-lg"
+                className="w-full max-w-md h-auto rounded-lg shadow-lg"
               />
             </div>
           </div>
