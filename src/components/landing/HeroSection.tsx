@@ -1,7 +1,10 @@
 
 import { CheckCircle, Star } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function HeroSection() {
+  const isMobile = useIsMobile();
+  
   return (
     <div className="font-sans">
       <section className="relative overflow-hidden min-h-[45vh] flex items-center justify-between py-8 bg-white">
@@ -16,7 +19,7 @@ export default function HeroSection() {
             {/* Left side content */}
             <div>
               <h1 className="font-bold text-3xl md:text-4xl mb-4 text-[#2463EB] leading-tight font-sans">
-                Maîtrisez l'anglais et faites décoller votre carrière<br className="hidden md:inline" />
+                Maîtrisez l'anglais et faites décoller votre carrière
                 <span className="inline-block text-[#F87315]">
                   Formation Certifiante
                 </span>
@@ -58,12 +61,12 @@ export default function HeroSection() {
               </div>
             </div>
             
-            {/* Right side image */}
-            <div className="hidden md:flex items-center justify-center">
+            {/* Image section - now visible on mobile and matched with form width */}
+            <div className="flex items-center justify-center">
               <img 
                 src="/lovable-uploads/d322419d-1352-435c-8c86-6fcef3afafd4.png" 
                 alt="Personne suivant une formation d'anglais en ligne" 
-                className="w-full max-w-md h-auto rounded-lg shadow-lg"
+                className="w-full max-w-[480px] h-auto rounded-lg shadow-lg"
               />
             </div>
           </div>
