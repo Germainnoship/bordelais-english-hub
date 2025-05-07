@@ -1,5 +1,6 @@
 
 import { MessageSquare } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const testimonials = [
   {
@@ -20,13 +21,25 @@ const testimonials = [
 ];
 
 export default function TestimonialsSection() {
+  const isMobile = useIsMobile();
+  
   return (
     <section className="py-14 bg-gradient-to-br from-violet-100 via-blue-50 to-white font-sans">
       <div className="container max-w-3xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-[#0367A6] mb-12 flex items-center justify-center gap-2">
-          <span role="img" aria-label="groupe" className="text-2xl">👥</span>
-          +6 400 personnes formées depuis 2019
-        </h2>
+        {isMobile ? (
+          <div className="flex flex-col items-center mb-6">
+            <span role="img" aria-label="groupe" className="text-2xl mb-3">👥</span>
+            <h2 className="text-3xl font-bold text-center text-[#0367A6]">
+              +6 400 personnes formées depuis 2019
+            </h2>
+          </div>
+        ) : (
+          <h2 className="text-3xl font-bold text-center text-[#0367A6] mb-12 flex items-center justify-center gap-2">
+            <span role="img" aria-label="groupe" className="text-2xl">👥</span>
+            +6 400 personnes formées depuis 2019
+          </h2>
+        )}
+        
         <div className="grid gap-8 md:grid-cols-3">
           {testimonials.map((t, i) => (
             <div key={i} className="bg-white rounded-xl p-6 shadow animate-fade-in flex flex-col items-center">

@@ -90,12 +90,12 @@ export default function LeadForm() {
           </div>
           {phoneError && <p className="text-red-500 text-xs mt-1 ml-7">{phoneError}</p>}
         </div>
-        <div className="flex items-center gap-2">
-          <Book className="text-[#0367A6]" size={20} />
+        <div className="flex items-center gap-2 w-full">
+          <Book className="text-[#0367A6] min-w-[20px]" size={20} />
           <select
             name="formation"
             required
-            className="flex-1 h-12 px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#0367A6] bg-white font-sans"
+            className="flex-1 h-12 px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#0367A6] bg-white font-sans max-w-full"
             disabled={sent}
           >
             <option value="">Type de formation souhaitée</option>

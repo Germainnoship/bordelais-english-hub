@@ -17,23 +17,25 @@ export default function HeroSection() {
         <div className="container mx-auto max-w-7xl px-4 z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             {/* Left side content */}
-            <div>
-              <h1 className="font-bold text-3xl md:text-4xl mb-4 text-[#0367A6] leading-tight font-sans">
+            <div className={isMobile ? "text-center" : ""}>
+              <h1 className={`font-bold text-3xl md:text-4xl mb-4 text-[#0367A6] leading-tight font-sans ${isMobile ? "mx-auto" : ""}`}>
                 Maîtrisez l'anglais et faites décoller votre carrière
                 <span className="inline-block text-[#F3AE02]">
                   Formation Certifiante
                 </span>
               </h1>
-              <p className="text-lg md:text-xl text-black mb-6 font-sans">
+              <p className={`text-lg md:text-xl text-black mb-6 font-sans ${isMobile ? "mx-auto" : ""}`}>
                 Professionnel, particulier ou en reconversion : ne laissez plus l'anglais freiner votre carrière, vos voyages ou vos projets.
               </p>
-              <a
-                href="#lead-form"
-                className="inline-block px-8 py-4 font-semibold rounded-lg shadow-md bg-[#F3AE02] text-white hover:bg-[#0367A6] hover:text-white transition-colors hover-scale animate-fade-in"
-              >
-                Télécharger la brochure
-              </a>
-              <div className="flex flex-col items-start gap-3 mt-6">
+              <div className={isMobile ? "flex justify-center" : ""}>
+                <a
+                  href="#lead-form"
+                  className="inline-block px-8 py-4 font-semibold rounded-lg shadow-md bg-[#F3AE02] text-white hover:bg-[#0367A6] hover:text-white transition-colors hover-scale animate-fade-in"
+                >
+                  Télécharger la brochure
+                </a>
+              </div>
+              <div className={`flex flex-col ${isMobile ? "items-center" : "items-start"} gap-3 mt-6`}>
                 <div className="flex items-center text-gray-800 font-medium gap-2">
                   <CheckCircle size={22} className="text-green-500" /> 
                   <span className="text-gray-900">Financement CPF</span>
@@ -44,7 +46,7 @@ export default function HeroSection() {
                 </div>
               </div>
               
-              <div className="mt-6">
+              <div className={`mt-6 ${isMobile ? "flex justify-center" : ""}`}>
                 <div className="inline-flex items-center gap-2 bg-white/95 backdrop-blur px-6 py-3 rounded-xl shadow">
                   <div className="flex">
                     {[...Array(5)].map((_, i) => (
