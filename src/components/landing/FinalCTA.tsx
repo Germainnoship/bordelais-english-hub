@@ -1,9 +1,18 @@
 
 import { Button } from "../ui/button";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useNavigate } from "react-router-dom";
 
 export default function FinalCTA() {
   const isMobile = useIsMobile();
+  const navigate = useNavigate();
+  
+  const scrollToForm = () => {
+    const form = document.getElementById('lead-form');
+    if (form) {
+      form.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   
   return (
     <section className="py-16 bg-gradient-to-b from-blue-50/50 to-white">
@@ -16,6 +25,7 @@ export default function FinalCTA() {
         </p>
         <Button 
           size="lg"
+          onClick={scrollToForm}
           className="cta-button bg-[#F3AE02] hover:bg-[#0367A6] hover:text-white rounded-lg"
         >
           Je commence ma formation

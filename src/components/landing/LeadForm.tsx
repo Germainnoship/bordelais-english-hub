@@ -2,9 +2,11 @@
 import * as React from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, Book, User } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function LeadForm() {
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [sent, setSent] = React.useState(false);
   const [phoneError, setPhoneError] = React.useState("");
 
@@ -18,9 +20,11 @@ export default function LeadForm() {
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     
-    // Get the phone number from the form
+    // Get the form data
     const formData = new FormData(e.currentTarget);
     const phoneNumber = formData.get("phone") as string;
+    const email = formData.get("email") as string;
+    const formation = formData.get("formation") as string;
     
     // Validate phone number
     if (!validatePhoneNumber(phoneNumber)) {
@@ -33,6 +37,14 @@ export default function LeadForm() {
     toast({
       title: "Merci !",
       description: "Votre demande a bien été envoyée. Nous revenons vers vous rapidement.",
+    });
+    
+    // Redirect to thank you page with the form data
+    navigate("/thank-you", { 
+      state: {
+        email,
+        formation
+      }
     });
   }
 
