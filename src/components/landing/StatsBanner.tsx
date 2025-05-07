@@ -21,7 +21,7 @@ export default function StatsBanner() {
   ];
 
   return (
-    <section className="bg-[#2463EB] py-10 text-white">
+    <section className="bg-[#0367A6] py-10 text-white">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto px-4">
           {stats.map((stat, index) => (

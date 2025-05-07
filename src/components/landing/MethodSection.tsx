@@ -61,7 +61,7 @@ export default function MethodSection() {
         <div className="text-center">
           <Button 
             size="lg"
-            className="cta-button bg-[#F87315] hover:bg-[#2463EB] hover:text-white"
+            className="cta-button bg-[#F3AE02] hover:bg-[#0367A6] hover:text-white"
           >
             Je découvre ma formation idéale
           </Button>

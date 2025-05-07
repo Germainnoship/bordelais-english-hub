@@ -43,7 +43,7 @@ export default function LeadForm() {
       </h3>
       <form className="flex flex-col gap-4" onSubmit={handleSubmit} autoComplete="off">
         <div className="flex items-center gap-2">
-          <User className="text-[#2463EB]" size={20} />
+          <User className="text-[#0367A6]" size={20} />
           <input
             required
             type="text"
@@ -54,7 +54,7 @@ export default function LeadForm() {
           />
         </div>
         <div className="flex items-center gap-2">
-          <User className="text-[#2463EB]" size={20} />
+          <User className="text-[#0367A6]" size={20} />
           <input
             required
             type="text"
@@ -65,7 +65,7 @@ export default function LeadForm() {
           />
         </div>
         <div className="flex items-center gap-2">
-          <Mail className="text-[#2463EB]" size={20} />
+          <Mail className="text-[#0367A6]" size={20} />
           <input
             required
             type="email"
@@ -77,7 +77,7 @@ export default function LeadForm() {
         </div>
         <div className="flex flex-col w-full">
           <div className="flex items-center gap-2">
-            <Phone className="text-[#2463EB]" size={20} />
+            <Phone className="text-[#0367A6]" size={20} />
             <input
               required
               type="tel"
@@ -91,7 +91,7 @@ export default function LeadForm() {
           {phoneError && <p className="text-red-500 text-xs mt-1 ml-7">{phoneError}</p>}
         </div>
         <div className="flex items-center gap-2">
-          <Book className="text-[#2463EB]" size={20} />
+          <Book className="text-[#0367A6]" size={20} />
           <select
             name="formation"
             required
@@ -106,7 +106,7 @@ export default function LeadForm() {
         </div>
         <button
           type="submit"
-          className="mt-2 w-full bg-[#F87315] text-white font-semibold py-3 rounded-lg hover:bg-[#2463EB] hover:text-white transition-colors hover-scale"
+          className="mt-2 w-full bg-[#F3AE02] text-white font-semibold py-3 rounded-lg hover:bg-[#0367A6] hover:text-white transition-colors hover-scale"
           disabled={sent}
         >
           {sent ? "Merci !" : "Télécharger ma brochure maintenant"}

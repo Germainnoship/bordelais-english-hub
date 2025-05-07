@@ -18,18 +18,18 @@ export default function HeroSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             {/* Left side content */}
             <div>
-              <h1 className="font-bold text-3xl md:text-4xl mb-4 text-[#2463EB] leading-tight font-sans">
+              <h1 className="font-bold text-3xl md:text-4xl mb-4 text-[#0367A6] leading-tight font-sans">
                 Maîtrisez l'anglais et faites décoller votre carrière
-                <span className="inline-block text-[#F87315]">
+                <span className="inline-block text-[#F3AE02]">
                   Formation Certifiante
                 </span>
               </h1>
-              <p className="text-lg md:text-xl text-gray-700 mb-6 font-sans">
+              <p className="text-lg md:text-xl text-black mb-6 font-sans">
                 Professionnel, particulier ou en reconversion : ne laissez plus l'anglais freiner votre carrière, vos voyages ou vos projets.
               </p>
               <a
                 href="#lead-form"
-                className="inline-block px-8 py-4 font-semibold rounded-lg shadow-md bg-[#F87315] text-white hover:bg-[#2463EB] hover:text-white transition-colors hover-scale animate-fade-in"
+                className="inline-block px-8 py-4 font-semibold rounded-lg shadow-md bg-[#F3AE02] text-white hover:bg-[#0367A6] hover:text-white transition-colors hover-scale animate-fade-in"
               >
                 Télécharger la brochure
               </a>

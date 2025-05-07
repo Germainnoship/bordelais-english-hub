@@ -23,7 +23,7 @@ export default function TestimonialsSection() {
   return (
     <section className="py-14 bg-gradient-to-br from-violet-100 via-blue-50 to-white font-sans">
       <div className="container max-w-3xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-[#2463EB] mb-12 flex items-center justify-center gap-2">
+        <h2 className="text-3xl font-bold text-center text-[#0367A6] mb-12 flex items-center justify-center gap-2">
           <span role="img" aria-label="groupe" className="text-2xl">👥</span>
           +6 400 personnes formées depuis 2019
         </h2>
