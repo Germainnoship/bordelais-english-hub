@@ -21,7 +21,7 @@ const formations = [
     icon: <Briefcase size={32} className="text-[#F3AE02]" />,
     description:
       "Maîtrisez l'anglais en milieu professionnel pour vous créer de nombreuses opportunités.",
-    promise: "Boostez votre carrière maintenant",
+    promise: "Boostez votre carrière",
   },
 ];
 
@@ -41,13 +41,15 @@ export default function FormationsSection() {
             <div className="mb-2">{f.icon}</div>
             <h4 className="text-lg font-bold mb-2 text-[#0367A6] text-center">{f.title}</h4>
             <p className="text-gray-700 text-center text-sm mb-4">{f.description}</p>
-            <a 
-              href="#lead-form" 
-              className="mt-auto flex items-center text-[#0367A6] hover:text-[#F3AE02] font-semibold transition-colors group"
-            >
-              {f.promise} 
-              <ArrowRight size={18} className="ml-1 transform group-hover:translate-x-1 transition-transform" />
-            </a>
+            <div className="w-full mt-auto">
+              <a 
+                href="#lead-form" 
+                className="mx-auto block w-fit px-4 py-2 border border-[#F3AE02]/30 rounded-md bg-[#F3AE02]/10 text-center text-[#0367A6] hover:text-[#F3AE02] font-semibold transition-colors group flex items-center"
+              >
+                {f.promise} 
+                <ArrowRight size={18} className="ml-1 transform group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
           </div>
         ))}
       </div>
