@@ -76,7 +76,7 @@ export default function TestimonialsSection() {
         >
           <CarouselContent>
             {testimonials.map((t, i) => (
-              <CarouselItem key={i} className="md:basis-1/3 lg:basis-1/3">
+              <CarouselItem key={i} className={isMobile ? "basis-full" : "md:basis-1/3 lg:basis-1/3"}>
                 <div className="bg-white rounded-xl p-6 shadow animate-fade-in flex flex-col items-center h-full">
                   <MessageSquare className="text-blue-400 mb-3" size={32} />
                   <div className="mb-2">
@@ -88,8 +88,18 @@ export default function TestimonialsSection() {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="hidden md:flex -left-4 lg:-left-6 bg-white" />
-          <CarouselNext className="hidden md:flex -right-4 lg:-right-6 bg-white" />
+          {!isMobile && (
+            <>
+              <CarouselPrevious className="hidden md:flex -left-4 lg:-left-6 bg-white" />
+              <CarouselNext className="hidden md:flex -right-4 lg:-right-6 bg-white" />
+            </>
+          )}
+          {isMobile && (
+            <div className="flex justify-center gap-2 mt-4">
+              <CarouselPrevious className="static transform-none bg-white h-8 w-8 mr-2" />
+              <CarouselNext className="static transform-none bg-white h-8 w-8 ml-2" />
+            </div>
+          )}
         </Carousel>
       </div>
     </section>

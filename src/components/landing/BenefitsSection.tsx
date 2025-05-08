@@ -1,5 +1,6 @@
 
 import { Users, GraduationCap, BookOpen, CheckCheck } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const benefits = [
   {
@@ -25,6 +26,8 @@ const benefits = [
 ];
 
 export default function BenefitsSection() {
+  const isMobile = useIsMobile();
+  
   return (
     <div className="grid grid-cols-1 gap-6">
       {benefits.map((b) => (
@@ -32,7 +35,9 @@ export default function BenefitsSection() {
           key={b.title}
           className="bg-blue-50 rounded-xl shadow flex flex-col items-center p-6 hover:shadow-lg transition animate-fade-in"
         >
-          <b.icon className="text-violet-600 mb-4" size={38} />
+          <div className={`${isMobile ? 'flex justify-center w-full' : ''}`}>
+            <b.icon className="text-violet-600 mb-4" size={38} />
+          </div>
           <h3 className="font-semibold text-lg mb-2">{b.title}</h3>
           {b.text && <p className="text-gray-600 text-sm text-center">{b.text}</p>}
           {b.subtitle && (
