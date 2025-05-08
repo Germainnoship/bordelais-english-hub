@@ -1,5 +1,6 @@
 
 import { TrendingUp, Award, Briefcase, ArrowRight } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const formations = [
   {
@@ -26,9 +27,11 @@ const formations = [
 ];
 
 export default function FormationsSection() {
+  const isMobile = useIsMobile();
+  
   return (
     <div className="bg-[#0367A6] py-12 px-4 rounded-xl">
-      <h2 className="text-3xl font-bold text-center text-white mb-12 max-w-4xl mx-auto">
+      <h2 className={`${isMobile ? 'text-2xl' : 'text-3xl'} font-bold text-center text-white mb-12 max-w-4xl mx-auto`}>
         Trouvez la formation adaptée à vos besoins, à vos objectifs et à votre rythme
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">

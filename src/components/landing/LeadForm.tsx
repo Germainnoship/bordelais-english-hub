@@ -107,7 +107,7 @@ export default function LeadForm() {
           <select
             name="formation"
             required
-            className="flex-1 h-12 px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#0367A6] bg-white font-sans max-w-full"
+            className="flex-1 h-12 px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#0367A6] bg-white font-sans w-full"
             disabled={sent}
           >
             <option value="">Type de formation souhaitée</option>
