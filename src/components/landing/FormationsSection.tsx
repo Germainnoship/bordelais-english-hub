@@ -1,24 +1,27 @@
 
-import { TrendingUp, Award, Briefcase } from "lucide-react";
+import { TrendingUp, Award, Briefcase, ArrowRight } from "lucide-react";
 
 const formations = [
   {
     title: "Formation Anglais intensive",
     icon: <TrendingUp size={32} className="text-[#F3AE02]" />,
     description:
-      "Apprentissage intensif, progrès rapides et suivi personnalisé pour tous niveaux. Parlez anglais en 90 jours.",
+      "Apprentissage intensif, progrès rapides et suivi personnalisé pour tous niveaux.",
+    promise: "Parlez anglais en 90 jours",
   },
   {
     title: "Préparation TOEIC",
     icon: <Award size={32} className="text-[#F3AE02]" />,
     description:
       "Entrainement ciblé, méthodes de réussite, bonnes pratiques, examens blancs et passage de la certification.",
+    promise: "Validez votre TOEIC en quelques semaines",
   },
   {
     title: "Formation Anglais professionnel",
     icon: <Briefcase size={32} className="text-[#F3AE02]" />,
     description:
       "Maîtrisez l'anglais en milieu professionnel pour vous créer de nombreuses opportunités.",
+    promise: "Boostez votre carrière maintenant",
   },
 ];
 
@@ -37,14 +40,21 @@ export default function FormationsSection() {
           >
             <div className="mb-2">{f.icon}</div>
             <h4 className="text-lg font-bold mb-2 text-[#0367A6] text-center">{f.title}</h4>
-            <p className="text-gray-700 text-center text-sm">{f.description}</p>
+            <p className="text-gray-700 text-center text-sm mb-4">{f.description}</p>
+            <a 
+              href="#lead-form" 
+              className="mt-auto flex items-center text-[#0367A6] hover:text-[#F3AE02] font-semibold transition-colors group"
+            >
+              {f.promise} 
+              <ArrowRight size={18} className="ml-1 transform group-hover:translate-x-1 transition-transform" />
+            </a>
           </div>
         ))}
       </div>
       <div className="mt-12 text-center">
         <a
           href="#formations"
-          className="inline-block px-8 py-4 font-semibold rounded-lg shadow-md bg-[#F3AE02] text-white hover:bg-[#0367A6] hover:text-white transition-colors hover-scale animate-fade-in"
+          className="inline-block px-8 py-4 font-semibold rounded-lg shadow-md bg-[#F3AE02] text-white hover:bg-[#0367A6] hover:text-white transition-colors hover-scale animate-fade-in text-center"
         >
           Découvrir nos formations
         </a>

@@ -1,6 +1,13 @@
 
 import { MessageSquare } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const testimonials = [
   {
@@ -18,6 +25,26 @@ const testimonials = [
     content:
       "J'ai repris confiance à l'oral. Les ateliers de conversation sont un vrai plus !",
   },
+  {
+    name: "Flora",
+    content:
+      "Centre de formation très professionnel, très bon suivi et très bonne expérience.",
+  },
+  {
+    name: "Aïcha",
+    content:
+      "Un service irréprochable, humain et très efficace. Mme Caldas a été d'un grand soutien dans ma démarche : elle m'a guidée, encouragée et permis d'accélérer tout le processus. Je ne l'oublierai pas. Merci infiniment !",
+  },
+  {
+    name: "Mélanie",
+    content:
+      "J'ai passé la certification LILATE avec Langues Faciles et tout s'est très bien déroulé. Je conseille vivement cette école si vous voulez prendre des cours particuliers en anglais ou bien passer une certification.",
+  },
+  {
+    name: "Léo",
+    content:
+      "L'équipe Langues Faciles est réactive et efficace. J'ai pu bénéficier d'un accompagnement de qualité pour le TOEIC.",
+  },
 ];
 
 export default function TestimonialsSection() {
@@ -25,7 +52,7 @@ export default function TestimonialsSection() {
   
   return (
     <section className="py-14 bg-gradient-to-br from-violet-100 via-blue-50 to-white font-sans">
-      <div className="container max-w-3xl mx-auto">
+      <div className="container max-w-3xl mx-auto px-4">
         {isMobile ? (
           <div className="flex flex-col items-center mb-6">
             <span role="img" aria-label="groupe" className="text-2xl mb-3">👥</span>
@@ -40,18 +67,30 @@ export default function TestimonialsSection() {
           </h2>
         )}
         
-        <div className="grid gap-8 md:grid-cols-3">
-          {testimonials.map((t, i) => (
-            <div key={i} className="bg-white rounded-xl p-6 shadow animate-fade-in flex flex-col items-center">
-              <MessageSquare className="text-blue-400 mb-3" size={32} />
-              <div className="mb-2">
-                <span className="text-yellow-400 text-lg" aria-label="5 étoiles">⭐⭐⭐⭐⭐</span>
-              </div>
-              <p className="italic text-gray-700 mb-4 text-center">"{t.content}"</p>
-              <span className="font-semibold text-blue-700">{t.name}</span>
-            </div>
-          ))}
-        </div>
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          className="w-full mx-auto"
+        >
+          <CarouselContent>
+            {testimonials.map((t, i) => (
+              <CarouselItem key={i} className="md:basis-1/3 lg:basis-1/3">
+                <div className="bg-white rounded-xl p-6 shadow animate-fade-in flex flex-col items-center h-full">
+                  <MessageSquare className="text-blue-400 mb-3" size={32} />
+                  <div className="mb-2">
+                    <span className="text-yellow-400 text-lg" aria-label="5 étoiles">⭐⭐⭐⭐⭐</span>
+                  </div>
+                  <p className="italic text-gray-700 mb-4 text-center flex-grow">{t.content}</p>
+                  <span className="font-semibold text-blue-700 mt-auto">{t.name}</span>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="hidden md:flex -left-4 lg:-left-6 bg-white" />
+          <CarouselNext className="hidden md:flex -right-4 lg:-right-6 bg-white" />
+        </Carousel>
       </div>
     </section>
   );

@@ -26,7 +26,7 @@ export default function FinalCTA() {
         <Button 
           size="lg"
           onClick={scrollToForm}
-          className="cta-button bg-[#F3AE02] hover:bg-[#0367A6] hover:text-white rounded-lg"
+          className="cta-button bg-[#F3AE02] hover:bg-[#0367A6] hover:text-white rounded-lg mx-auto"
         >
           Je commence ma formation
         </Button>
