@@ -16,6 +16,9 @@ export default function ThankYou() {
     if (!location.state) {
       navigate("/");
     }
+    
+    // Scroll to the top of the page when component mounts
+    window.scrollTo(0, 0);
   }, [location.state, navigate]);
 
   const getFormationLabel = (value: string) => {
@@ -32,8 +35,14 @@ export default function ThankYou() {
       {/* Header section */}
       <header className="bg-[#0367A6] py-4">
         <div className="container mx-auto px-4">
-          <div className="flex justify-center md:justify-start">
-            <a href="/" className="font-bold text-white text-2xl">Langues Faciles</a>
+          <div className="flex justify-center md:justify-start items-center">
+            <a href="/" className="flex items-center">
+              <img 
+                src="/lovable-uploads/be1b1a48-3630-438a-903a-889cb062d42b.png" 
+                alt="Langues Faciles" 
+                className="h-16 md:h-20" 
+              />
+            </a>
           </div>
         </div>
       </header>
