@@ -1,16 +1,15 @@
-
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 
 const trainers = [
   {
-    name: "Ingrid",
-    role: "formatrice Anglais",
-    image: "/lovable-uploads/5495fa52-826d-4824-bcf6-fdb3457a70c8.png"
+    name: "Daniel",
+    role: "formateur Anglais",
+    image: "/lovable-uploads/60ed4426-dd0b-4e8f-899a-7d7cbc314aae.png"
   },
   {
-    name: "Rachel",
+    name: "Marianne",
     role: "formatrice Anglais",
-    image: "/lovable-uploads/daea17e9-5259-4ea8-b4ce-a39270a7348f.png"
+    image: "/lovable-uploads/c46f8f65-f41f-4403-8f12-42b93c92f208.png"
   },
   {
     name: "Christopher",
