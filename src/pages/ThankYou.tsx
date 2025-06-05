@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Calendar, Mail, PhoneCall, Star } from "lucide-react";
+import { Calendar, Mail, PhoneCall, Star, ArrowUp } from "lucide-react";
 import Footer from "@/components/landing/Footer";
 
 export default function ThankYou() {
@@ -27,6 +27,13 @@ export default function ThankYou() {
       case "pro": return "Formation anglais professionnel";
       case "toeic": return "Préparation TOEIC / LINGUASKILL / LILATE";
       default: return "Formation";
+    }
+  };
+
+  const scrollToCalendar = () => {
+    const calendarSection = document.getElementById('calendar-section');
+    if (calendarSection) {
+      calendarSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -72,6 +79,48 @@ export default function ThankYou() {
       timeAgo: "12 weeks ago",
       content: "Expérience top. Équipe très réactive et à l'écoute. Je recommande vraiment.",
       image: "/lovable-uploads/4c25053b-dcde-4368-9734-b787db482110.png"
+    },
+    {
+      name: "Nicolas B",
+      rating: 5,
+      timeAgo: "31 May 2024",
+      content: "Je recommande entièrement langues faciles ! Ayant effectué une formation rapide de 5 heures pour obtenir le TOEIC 4 skills et il a été très facile d'avoir le devis accepté par pôle emploi car ils ont pu me proposer une formation adaptée à un prix raisonnable qu'aucun centre de formation n'a pas me proposer. C'est une entreprise très professionnelle, réactive, à l'écoute et très efficace pour avoir des résultats en anglais.",
+      avatar: "N"
+    },
+    {
+      name: "Nathalie Attard",
+      rating: 5,
+      timeAgo: "11 Apr 2024",
+      content: "Je suis ravie, formateurs de bonne qualité et natif du pays, parfait pour stages adulte ou enfants. Cours complets et adaptés aux horaires de chacun. Équipe administrative compétente et réactive avec une gérante arrangeante 😊",
+      avatar: "N"
+    },
+    {
+      name: "Sylvie Aman",
+      rating: 5,
+      timeAgo: "30 Mar 2024",
+      content: "Équipe sérieuse, dynamique, apprentissages diverses proposés au top. J ai pris des cours d anglais dans le cadre de mon CPF avec Isabelle. C était un réel plaisir à chaque fois. Les 1h30 passaient très vite et grâce à ses cours de grande qualité j ai revu les bases qui sont essentielles, j ai vraiment progressé et pris confiance en moi. Les locaux sont parfaitement adaptés. Je recommande. J ai passé le Toeic et ai réussi à obtenir le score de 570. Ce qui est très bien n ayant pas passé d examens depuis 1995 ! Merci à toute l équipe et surtout à Isabelle",
+      avatar: "S"
+    },
+    {
+      name: "Sébastien Bodin",
+      rating: 5,
+      timeAgo: "1 Feb 2024",
+      content: "Centre de formation vraiment sérieux. L'équipe est vraiment très pro, et le prof est vraiment pédagogue et à l'écoute des besoins. Je suis des cours d'anglais via mon CPF et je vois mes progrès à chaque cours. Je recommande vraiment ce centre de formation.",
+      avatar: "S"
+    },
+    {
+      name: "Alexandre Laufs",
+      rating: 5,
+      timeAgo: "49 weeks ago",
+      content: "Je recommande Langue facile pour le passage du linguaskill, merci à Laura pour sa pédagogie et ses qualités d'English trainer.",
+      avatar: "A"
+    },
+    {
+      name: "Annie Boundou",
+      rating: 5,
+      timeAgo: "29 Mar 2024",
+      content: "Très agréable. L'équipe est très à l'écoute et très accueillante. Moi je à l'aise dans mon apprentissage de l'anglais que je n'ai plus pratiqué depuis le collège il y a de cela plus de 30 ans.",
+      avatar: "A"
     }
   ];
 
@@ -122,7 +171,7 @@ export default function ThankYou() {
           </div>
 
           {/* Calendly section */}
-          <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-200 mb-12">
+          <div id="calendar-section" className="bg-white rounded-xl shadow-lg p-8 border border-gray-200 mb-12">
             <div className="text-center mb-8">
               <h2 className="text-2xl font-bold text-[#0367A6] mb-4">
                 Réservez votre bilan linguistique gratuit
@@ -164,7 +213,7 @@ export default function ThankYou() {
                   className="bg-[#F3AE02] hover:bg-[#0367A6] text-white px-6 py-3 rounded-lg w-full"
                   onClick={() => window.open("https://calendly.com/votrelien", "_blank")}
                 >
-                  Réserver mon créneau
+                  Réserver mon bilan gratuit
                 </Button>
               </div>
             </div>
@@ -192,7 +241,7 @@ export default function ThankYou() {
                 <div key={index} className="bg-gray-50 rounded-lg p-6 border border-gray-200">
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold mr-3">
-                      {review.name.charAt(0)}
+                      {review.avatar || review.name.charAt(0)}
                     </div>
                     <div>
                       <h4 className="font-semibold text-gray-900">{review.name}</h4>
@@ -209,6 +258,17 @@ export default function ThankYou() {
                   </p>
                 </div>
               ))}
+            </div>
+
+            {/* CTA to scroll back to calendar */}
+            <div className="mt-12 text-center">
+              <Button 
+                onClick={scrollToCalendar}
+                className="bg-[#F3AE02] hover:bg-[#0367A6] text-white px-8 py-3 rounded-lg inline-flex items-center gap-2"
+              >
+                <ArrowUp className="h-5 w-5" />
+                Réserver un bilan gratuit
+              </Button>
             </div>
           </div>
 
