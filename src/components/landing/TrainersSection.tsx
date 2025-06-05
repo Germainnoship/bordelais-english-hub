@@ -1,3 +1,4 @@
+
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 
 const trainers = [
@@ -9,7 +10,7 @@ const trainers = [
   {
     name: "Marianne",
     role: "formatrice Anglais",
-    image: "/lovable-uploads/c46f8f65-f41f-4403-8f12-42b93c92f208.png"
+    image: "/lovable-uploads/3c0c869a-0b87-4fc5-8037-9c0e3115aca6.png"
   },
   {
     name: "Christopher",
