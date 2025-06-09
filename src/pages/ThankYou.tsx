@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Calendar, Mail, PhoneCall, Star, ArrowUp } from "lucide-react";
+import { Calendar, Mail, PhoneCall, Star, ArrowUp, CheckCircle } from "lucide-react";
 import Footer from "@/components/landing/Footer";
 
 export default function ThankYou() {
@@ -48,6 +48,13 @@ export default function ThankYou() {
       calendarSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  const benefits = [
+    "Une analyse de votre niveau actuel d'anglais",
+    "Des recommandations personnalisées", 
+    "Un plan d'action précis",
+    "Toutes les informations sur le financement CPF"
+  ];
 
   const googleReviews = [
     {
@@ -182,6 +189,30 @@ export default function ThankYou() {
             </div>
           </div>
 
+          {/* What you'll get section - centered above calendar */}
+          <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-200 mb-8">
+            <div className="text-center mb-8">
+              <h3 className="font-semibold text-2xl text-[#0367A6] flex items-center gap-2 mb-6 justify-center">
+                <PhoneCall className="h-6 w-6 text-[#F3AE02]" />
+                Ce que vous obtiendrez
+              </h3>
+              
+              <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+                {benefits.map((benefit, index) => (
+                  <div 
+                    key={index}
+                    className="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:shadow-lg hover:border-[#F3AE02]/30 hover:bg-[#F3AE02]/5 transition-all duration-300 transform hover:scale-105"
+                  >
+                    <div className="flex items-start gap-3">
+                      <CheckCircle className="h-6 w-6 text-[#F3AE02] flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-700 font-medium">{benefit}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
           {/* Calendly section */}
           <div id="calendar-section" className="bg-white rounded-xl shadow-lg p-8 border border-gray-200 mb-12">
             <div className="text-center mb-8">
@@ -192,27 +223,6 @@ export default function ThankYou() {
                 Échangez avec l'un de nos conseillers pour discuter de vos besoins et objectifs spécifiques. 
                 Nous vous aiderons à identifier la formation la plus adaptée à votre situation.
               </p>
-            </div>
-            
-            {/* What you'll get section - above calendar */}
-            <div className="bg-gray-50 p-6 rounded-lg mb-8 max-w-2xl mx-auto">
-              <h3 className="font-semibold text-lg text-[#0367A6] flex items-center gap-2 mb-4 justify-center">
-                <PhoneCall className="h-5 w-5 text-[#F3AE02]" />
-                Ce que vous obtiendrez
-              </h3>
-              <ul className="space-y-3">
-                {[
-                  "Une analyse de votre niveau actuel d'anglais",
-                  "Des recommandations personnalisées",
-                  "Un plan d'action précis",
-                  "Toutes les informations sur le financement CPF"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="text-[#F3AE02] font-bold">✓</span>
-                    <span className="text-gray-700">{item}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
             
             {/* Calendly widget - standalone */}
