@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -156,7 +155,7 @@ export default function ThankYou() {
 
       {/* Thank you content */}
       <main className="flex-grow container mx-auto px-4 py-12">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           {/* Confirmation message */}
           <div className="bg-white rounded-xl shadow-lg p-8 mb-12 border-t-4 border-[#F3AE02] text-center">
             <div className="flex justify-center mb-6">
@@ -281,14 +280,14 @@ export default function ThankYou() {
             </div>
           </div>
 
-          {/* Return home button */}
+          {/* Visit website button */}
           <div className="mt-8 text-center">
             <Button 
               variant="outline" 
-              onClick={() => navigate("/")}
+              onClick={() => window.open("https://www.languesfaciles.fr/", "_blank")}
               className="border-[#0367A6] text-[#0367A6] hover:bg-[#0367A6] hover:text-white"
             >
-              Retourner à l'accueil
+              Visitez notre site internet
             </Button>
           </div>
         </div>
