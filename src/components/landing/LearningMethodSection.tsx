@@ -5,6 +5,13 @@ import { useIsMobile } from "@/hooks/use-mobile";
 export default function LearningMethodSection() {
   const isMobile = useIsMobile();
   
+  const scrollToForm = () => {
+    const form = document.getElementById('lead-form');
+    if (form) {
+      form.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+  
   const methods = {
     classic: [
       "Cours théoriques sans mise en pratique",
@@ -65,12 +72,12 @@ export default function LearningMethodSection() {
           </div>
 
           <div className="flex justify-center mt-8">
-            <a
-              href="#contact"
+            <button
+              onClick={scrollToForm}
               className="inline-block px-8 py-4 font-semibold rounded-lg shadow-md bg-[#F3AE02] text-white hover:bg-[#0367A6] hover:text-white transition-colors animate-fade-in text-center"
             >
               Découvrir la méthode Langues Faciles
-            </a>
+            </button>
           </div>
         </div>
       </div>

@@ -194,36 +194,38 @@ export default function ThankYou() {
               </p>
             </div>
             
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="font-semibold text-lg text-[#0367A6] flex items-center gap-2 mb-4">
-                  <PhoneCall className="h-5 w-5 text-[#F3AE02]" />
-                  Ce que vous obtiendrez
-                </h3>
-                <ul className="space-y-3">
-                  {[
-                    "Une analyse de votre niveau actuel d'anglais",
-                    "Des recommandations personnalisées",
-                    "Un plan d'action précis",
-                    "Toutes les informations sur le financement CPF"
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-2">
-                      <span className="text-[#F3AE02] font-bold">✓</span>
-                      <span className="text-gray-700">{item}</span>
-                    </li>
-                  ))}
-                </ul>
+            {/* What you'll get section - above calendar */}
+            <div className="bg-gray-50 p-6 rounded-lg mb-8 max-w-2xl mx-auto">
+              <h3 className="font-semibold text-lg text-[#0367A6] flex items-center gap-2 mb-4 justify-center">
+                <PhoneCall className="h-5 w-5 text-[#F3AE02]" />
+                Ce que vous obtiendrez
+              </h3>
+              <ul className="space-y-3">
+                {[
+                  "Une analyse de votre niveau actuel d'anglais",
+                  "Des recommandations personnalisées",
+                  "Un plan d'action précis",
+                  "Toutes les informations sur le financement CPF"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <span className="text-[#F3AE02] font-bold">✓</span>
+                    <span className="text-gray-700">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            {/* Calendly widget - standalone */}
+            <div className="flex flex-col justify-center items-center">
+              <div className="flex items-center gap-2 mb-6">
+                <Calendar className="h-8 w-8 text-[#0367A6]" />
+                <h3 className="font-semibold text-xl text-[#0367A6]">Réserver mon bilan gratuit</h3>
               </div>
-              
-              <div className="flex flex-col justify-center items-center bg-blue-50 p-6 rounded-lg">
-                <Calendar className="h-12 w-12 text-[#0367A6] mb-4" />
-                <h3 className="font-semibold text-lg mb-4 text-center">Réserver maintenant</h3>
-                <div 
-                  className="calendly-inline-widget w-full" 
-                  data-url="https://calendly.com/languesfaciles/rendez-vous-avec-un-conseiller"
-                  style={{ minWidth: '320px', height: '700px' }}
-                ></div>
-              </div>
+              <div 
+                className="calendly-inline-widget w-full max-w-4xl" 
+                data-url="https://calendly.com/languesfaciles/rendez-vous-avec-un-conseiller"
+                style={{ minWidth: '320px', height: '700px' }}
+              ></div>
             </div>
             
             <div className="mt-8 pt-6 border-t border-gray-100 text-center">

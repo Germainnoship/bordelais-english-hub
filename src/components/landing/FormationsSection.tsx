@@ -29,6 +29,13 @@ const formations = [
 export default function FormationsSection() {
   const isMobile = useIsMobile();
   
+  const scrollToForm = () => {
+    const form = document.getElementById('lead-form');
+    if (form) {
+      form.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+  
   return (
     <div className="bg-[#0367A6] py-12 px-4 rounded-xl">
       <h2 className={`${isMobile ? 'text-2xl' : 'text-3xl'} font-bold text-center text-white mb-12 max-w-4xl mx-auto`}>
@@ -45,24 +52,24 @@ export default function FormationsSection() {
             <h4 className="text-lg font-bold mb-2 text-[#0367A6] text-center">{f.title}</h4>
             <p className="text-gray-700 text-center text-sm mb-4">{f.description}</p>
             <div className="w-full mt-auto">
-              <a 
-                href="#lead-form" 
+              <button 
+                onClick={scrollToForm}
                 className="mx-auto block w-fit px-4 py-2 border border-[#F3AE02]/30 rounded-md bg-[#F3AE02]/10 text-center text-[#0367A6] hover:text-[#F3AE02] font-semibold transition-colors group flex items-center"
               >
                 {f.promise} 
                 <ArrowRight size={18} className="ml-1 transform group-hover:translate-x-1 transition-transform" />
-              </a>
+              </button>
             </div>
           </div>
         ))}
       </div>
       <div className="mt-12 text-center">
-        <a
-          href="#formations"
+        <button
+          onClick={scrollToForm}
           className="inline-block px-8 py-4 font-semibold rounded-lg shadow-md bg-[#F3AE02] text-white hover:bg-[#0367A6] hover:text-white transition-colors hover-scale animate-fade-in text-center"
         >
           Découvrir nos formations
-        </a>
+        </button>
       </div>
     </div>
   );

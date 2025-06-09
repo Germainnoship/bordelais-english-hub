@@ -5,6 +5,13 @@ import { useIsMobile } from "@/hooks/use-mobile";
 export default function HeroSection() {
   const isMobile = useIsMobile();
   
+  const scrollToForm = () => {
+    const form = document.getElementById('lead-form');
+    if (form) {
+      form.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+  
   return (
     <div className="font-sans">
       <section className="relative overflow-hidden min-h-[45vh] flex items-center justify-between py-8 bg-white">
@@ -28,12 +35,12 @@ export default function HeroSection() {
                 Professionnel, particulier ou en reconversion : ne laissez plus l'anglais freiner votre carrière, vos voyages ou vos projets.
               </p>
               <div className={isMobile ? "flex justify-center" : ""}>
-                <a
-                  href="#lead-form"
+                <button
+                  onClick={scrollToForm}
                   className="inline-block px-8 py-4 font-semibold rounded-lg shadow-md bg-[#F3AE02] text-white hover:bg-[#0367A6] hover:text-white transition-colors hover-scale animate-fade-in"
                 >
                   Télécharger la brochure
-                </a>
+                </button>
               </div>
               <div className={`flex flex-col ${isMobile ? "items-center" : "items-start"} gap-3 mt-6`}>
                 <div className="flex items-center text-gray-800 font-medium gap-2">
