@@ -19,6 +19,19 @@ export default function ThankYou() {
     
     // Scroll to the top of the page when component mounts
     window.scrollTo(0, 0);
+
+    // Load Calendly script
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      // Cleanup script on unmount
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
   }, [location.state, navigate]);
 
   const getFormationLabel = (value: string) => {
@@ -129,7 +142,7 @@ export default function ThankYou() {
       {/* Header section */}
       <header className="bg-[#0367A6] py-4">
         <div className="container mx-auto px-4">
-          <div className="flex justify-center md:justify-start items-center">
+          <div className="flex justify-center items-center">
             <a href="/" className="flex items-center">
               <img 
                 src="/lovable-uploads/be1b1a48-3630-438a-903a-889cb062d42b.png" 
@@ -203,18 +216,14 @@ export default function ThankYou() {
                 </ul>
               </div>
               
-              <div className="flex flex-col justify-center items-center bg-blue-50 p-6 rounded-lg text-center">
+              <div className="flex flex-col justify-center items-center bg-blue-50 p-6 rounded-lg">
                 <Calendar className="h-12 w-12 text-[#0367A6] mb-4" />
-                <h3 className="font-semibold text-lg mb-2">Réserver maintenant</h3>
-                <p className="text-gray-600 mb-6">
-                  Consultation de 15 minutes, totalement gratuite et sans engagement
-                </p>
-                <Button 
-                  className="bg-[#F3AE02] hover:bg-[#0367A6] text-white px-6 py-3 rounded-lg w-full"
-                  onClick={() => window.open("https://calendly.com/votrelien", "_blank")}
-                >
-                  Réserver mon bilan gratuit
-                </Button>
+                <h3 className="font-semibold text-lg mb-4 text-center">Réserver maintenant</h3>
+                <div 
+                  className="calendly-inline-widget w-full" 
+                  data-url="https://calendly.com/languesfaciles/rendez-vous-avec-un-conseiller"
+                  style={{ minWidth: '320px', height: '700px' }}
+                ></div>
               </div>
             </div>
             
