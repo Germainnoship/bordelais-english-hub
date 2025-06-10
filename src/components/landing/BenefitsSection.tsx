@@ -52,16 +52,6 @@ export default function BenefitsSection() {
           )}
         </div>
       ))}
-      
-      {/* CTA Section */}
-      <div className="mt-8 text-center">
-        <button 
-          onClick={scrollToForm}
-          className="inline-block px-8 py-4 font-semibold rounded-lg shadow-md bg-[#F3AE02] text-white hover:bg-[#0367A6] hover:text-white transition-colors hover-scale animate-fade-in"
-        >
-          Je découvre ma formation idéale
-        </button>
-      </div>
     </div>
   );
 }
