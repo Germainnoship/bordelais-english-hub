@@ -21,8 +21,7 @@ const benefits = [
   {
     icon: CheckCheck,
     title: "Certification reconnue",
-    text: "Préparation et passage officiel (TOEIC, LINGUASKILL, LILATE), avec possibilité de financement CPF.",
-    cta: "Je découvre ma formation idéale"
+    subtitle: "Préparation et passage officiel (TOEIC, LINGUASKILL, LILATE), avec possibilité de financement CPF.",
   },
 ];
 
@@ -47,17 +46,8 @@ export default function BenefitsSection() {
             <b.icon className="text-violet-600 mb-4" size={38} />
           </div>
           <h3 className="font-semibold text-lg mb-2">{b.title}</h3>
-          {b.text && <p className="text-gray-600 text-sm text-center">{b.text}</p>}
           {b.subtitle && (
             <p className="text-gray-600 text-sm text-center mt-2">{b.subtitle}</p>
-          )}
-          {b.cta && (
-            <button 
-              onClick={scrollToForm}
-              className="mt-4 inline-block px-8 py-4 font-semibold rounded-lg shadow-md bg-[#F3AE02] text-white hover:bg-[#0367A6] hover:text-white transition-colors hover-scale animate-fade-in"
-            >
-              {b.cta}
-            </button>
           )}
         </div>
       ))}
