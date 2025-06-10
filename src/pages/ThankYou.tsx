@@ -189,9 +189,20 @@ export default function ThankYou() {
             </div>
           </div>
 
-          {/* What you'll get section - centered above calendar */}
-          <div className="bg-white rounded-xl shadow-lg p-8 border border-gray-200 mb-8">
+          {/* Calendly section */}
+          <div id="calendar-section" className="bg-white rounded-xl shadow-lg p-8 border border-gray-200 mb-12">
             <div className="text-center mb-8">
+              <h2 className="text-2xl font-bold text-[#0367A6] mb-4">
+                Réservez votre bilan linguistique gratuit
+              </h2>
+              <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
+                Échangez avec l'un de nos conseillers pour discuter de vos besoins et objectifs spécifiques. 
+                Nous vous aiderons à identifier la formation la plus adaptée à votre situation.
+              </p>
+            </div>
+
+            {/* What you'll get section - moved here */}
+            <div className="mb-8">
               <h3 className="font-semibold text-2xl text-[#0367A6] flex items-center gap-2 mb-6 justify-center">
                 <PhoneCall className="h-6 w-6 text-[#F3AE02]" />
                 Ce que vous obtiendrez
@@ -210,19 +221,6 @@ export default function ThankYou() {
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
-
-          {/* Calendly section */}
-          <div id="calendar-section" className="bg-white rounded-xl shadow-lg p-8 border border-gray-200 mb-12">
-            <div className="text-center mb-8">
-              <h2 className="text-2xl font-bold text-[#0367A6] mb-4">
-                Réservez votre bilan linguistique gratuit
-              </h2>
-              <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
-                Échangez avec l'un de nos conseillers pour discuter de vos besoins et objectifs spécifiques. 
-                Nous vous aiderons à identifier la formation la plus adaptée à votre situation.
-              </p>
             </div>
             
             {/* Calendly widget - standalone */}
