@@ -1,3 +1,4 @@
+
 import { BriefcaseIcon, TrendingUpIcon, AwardIcon } from "lucide-react";
 import { Button } from "../ui/button";
 import { useNavigate } from "react-router-dom";
@@ -8,13 +9,13 @@ export default function MethodSection() {
   const scrollToForm = () => {
     console.log("Method section CTA clicked, current path:", window.location.pathname);
     
-    if (window.location.pathname === '/') {
+    if (window.location.pathname === '/' || window.location.pathname === '/formation-anglais') {
       const form = document.getElementById('lead-form');
       if (form) {
         form.scrollIntoView({ behavior: 'smooth' });
       }
     } else {
-      navigate('/');
+      navigate('/formation-anglais');
       setTimeout(() => {
         const form = document.getElementById('lead-form');
         if (form) {
