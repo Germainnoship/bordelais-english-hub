@@ -1,14 +1,30 @@
 
 import { Check, X } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useNavigate } from "react-router-dom";
 
 export default function LearningMethodSection() {
   const isMobile = useIsMobile();
+  const navigate = useNavigate();
   
   const scrollToForm = () => {
-    const form = document.getElementById('lead-form');
-    if (form) {
-      form.scrollIntoView({ behavior: 'smooth' });
+    // Check if we're on the home page
+    if (window.location.pathname === '/') {
+      // We're on the home page, scroll to form
+      const form = document.getElementById('lead-form');
+      if (form) {
+        form.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // We're on another page, navigate to home page with a hash to scroll to form
+      navigate('/#lead-form');
+      // Add a small delay to ensure the page loads before scrolling
+      setTimeout(() => {
+        const form = document.getElementById('lead-form');
+        if (form) {
+          form.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
     }
   };
   
