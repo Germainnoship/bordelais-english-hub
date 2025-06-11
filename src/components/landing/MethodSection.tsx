@@ -1,8 +1,29 @@
-
 import { BriefcaseIcon, TrendingUpIcon, AwardIcon } from "lucide-react";
 import { Button } from "../ui/button";
+import { useNavigate } from "react-router-dom";
 
 export default function MethodSection() {
+  const navigate = useNavigate();
+  
+  const scrollToForm = () => {
+    console.log("Method section CTA clicked, current path:", window.location.pathname);
+    
+    if (window.location.pathname === '/') {
+      const form = document.getElementById('lead-form');
+      if (form) {
+        form.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate('/');
+      setTimeout(() => {
+        const form = document.getElementById('lead-form');
+        if (form) {
+          form.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 200);
+    }
+  };
+
   const advantages = [
     {
       icon: BriefcaseIcon,
@@ -61,6 +82,7 @@ export default function MethodSection() {
         <div className="text-center">
           <Button 
             size="lg"
+            onClick={scrollToForm}
             className="cta-button bg-[#F3AE02] hover:bg-[#0367A6] hover:text-white"
           >
             Je découvre ma formation idéale

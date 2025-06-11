@@ -1,4 +1,3 @@
-
 import { Check, X } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useNavigate } from "react-router-dom";
@@ -8,23 +7,29 @@ export default function LearningMethodSection() {
   const navigate = useNavigate();
   
   const scrollToForm = () => {
+    console.log("CTA clicked, current path:", window.location.pathname);
+    
     // Check if we're on the home page
     if (window.location.pathname === '/') {
       // We're on the home page, scroll to form
+      console.log("On home page, scrolling to form");
       const form = document.getElementById('lead-form');
       if (form) {
         form.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        console.log("Form element not found");
       }
     } else {
-      // We're on another page, navigate to home page with a hash to scroll to form
-      navigate('/#lead-form');
+      // We're on another page, navigate to home page
+      console.log("Not on home page, navigating to home");
+      navigate('/');
       // Add a small delay to ensure the page loads before scrolling
       setTimeout(() => {
         const form = document.getElementById('lead-form');
         if (form) {
           form.scrollIntoView({ behavior: 'smooth' });
         }
-      }, 100);
+      }, 200);
     }
   };
   
