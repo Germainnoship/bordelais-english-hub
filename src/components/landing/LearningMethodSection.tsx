@@ -76,7 +76,7 @@ export default function LearningMethodSection() {
               onClick={scrollToForm}
               className="inline-block px-8 py-4 font-semibold rounded-lg shadow-md bg-[#F3AE02] text-white hover:bg-[#0367A6] hover:text-white transition-colors animate-fade-in text-center"
             >
-              Découvrir la méthode Langues Faciles
+              Je découvre ma formation idéale
             </button>
           </div>
         </div>
