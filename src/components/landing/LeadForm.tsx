@@ -1,3 +1,4 @@
+
 import * as React from "react";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
@@ -31,18 +32,29 @@ export default function LeadForm() {
       gclid: gclid
     };
 
-    console.log("Sending data to webhook:", data);
+    console.log("=== WEBHOOK DEBUG ===");
+    console.log("Webhook URL:", "https://hook.eu2.make.com/1sqmrireo6hlrkgnqjwiovn99l1mre59");
+    console.log("Data being sent:", data);
+    console.log("Data as JSON:", JSON.stringify(data));
 
     try {
       const response = await fetch("https://hook.eu2.make.com/1sqmrireo6hlrkgnqjwiovn99l1mre59", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Accept": "application/json"
         },
         body: JSON.stringify(data),
       });
 
+      console.log("Response status:", response.status);
+      console.log("Response headers:", response.headers);
+      
+      const responseText = await response.text();
+      console.log("Response body:", responseText);
+
       if (response.ok) {
+        console.log("✅ Webhook call successful");
         toast({
           title: "Merci !",
           description: "Votre demande a bien été envoyée ! Un conseiller vous recontactera rapidement.",
@@ -56,10 +68,11 @@ export default function LeadForm() {
           }
         });
       } else {
-        throw new Error("Erreur lors de l'envoi");
+        console.error("❌ Webhook call failed with status:", response.status);
+        throw new Error(`Erreur webhook: ${response.status}`);
       }
     } catch (error) {
-      console.error("Erreur lors de l'envoi:", error);
+      console.error("❌ Error calling webhook:", error);
       toast({
         title: "Erreur",
         description: "Une erreur s'est produite lors de l'envoi. Veuillez réessayer.",
