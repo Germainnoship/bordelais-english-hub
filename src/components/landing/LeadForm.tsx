@@ -2,50 +2,84 @@
 import * as React from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, Book, User } from "lucide-react";
-import { useNavigate } from "react-router-dom";
 
 export default function LeadForm() {
   const { toast } = useToast();
-  const navigate = useNavigate();
-  const [sent, setSent] = React.useState(false);
-  const [phoneError, setPhoneError] = React.useState("");
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const [isSubmitted, setIsSubmitted] = React.useState(false);
 
-  // Validate French phone number
-  const validatePhoneNumber = (phone: string) => {
-    // This regex matches French phone numbers in various formats
-    const phoneRegex = /^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/;
-    return phoneRegex.test(phone);
+  // Get gclid from URL parameters
+  const getGclid = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('gclid') || '';
   };
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
-    // Get the form data
     const formData = new FormData(e.currentTarget);
-    const phoneNumber = formData.get("phone") as string;
-    const email = formData.get("email") as string;
-    const formation = formData.get("formation") as string;
+    const gclid = getGclid();
     
-    // Validate phone number
-    if (!validatePhoneNumber(phoneNumber)) {
-      setPhoneError("Veuillez entrer un numéro de téléphone français valide");
-      return;
-    }
-    
-    setPhoneError("");
-    setSent(true);
-    toast({
-      title: "Merci !",
-      description: "Votre demande a bien été envoyée. Nous revenons vers vous rapidement.",
-    });
-    
-    // Redirect to thank you page with the form data
-    navigate("/thank-you", { 
-      state: {
-        email,
-        formation
+    const data = {
+      prenom: formData.get("prenom") as string,
+      nom: formData.get("nom") as string,
+      email: formData.get("email") as string,
+      telephone: formData.get("telephone") as string,
+      type_formation: formData.get("type_formation") as string,
+      gclid: gclid
+    };
+
+    console.log("Sending data to webhook:", data);
+
+    try {
+      const response = await fetch("https://hook.eu2.make.com/1sqmrireo6hlrkgnqjwiovn99l1mre59", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        toast({
+          title: "Merci !",
+          description: "Votre demande a bien été envoyée ! Un conseiller vous recontactera rapidement.",
+        });
+      } else {
+        throw new Error("Erreur lors de l'envoi");
       }
-    });
+    } catch (error) {
+      console.error("Erreur lors de l'envoi:", error);
+      toast({
+        title: "Erreur",
+        description: "Une erreur s'est produite lors de l'envoi. Veuillez réessayer.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  if (isSubmitted) {
+    return (
+      <div id="lead-form" className="bg-blue-50 rounded-xl shadow-lg p-8 border-2 border-[#0367A6]/25 space-y-4">
+        <div className="text-center">
+          <h3 className="font-bold text-2xl mb-6 text-gray-900 font-sans">
+            Merci !
+          </h3>
+          <p className="text-lg text-gray-700 mb-4">
+            Votre demande a bien été envoyée ! Un conseiller vous recontactera rapidement.
+          </p>
+          <div className="bg-green-100 border border-green-300 rounded-lg p-4">
+            <p className="text-green-800 font-medium">
+              ✓ Votre brochure vous sera envoyée par email
+            </p>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -59,10 +93,10 @@ export default function LeadForm() {
           <input
             required
             type="text"
-            name="firstname"
+            name="prenom"
             placeholder="Prénom"
             className="flex-1 h-12 px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#0367A6] bg-white font-sans"
-            disabled={sent}
+            disabled={isSubmitting}
           />
         </div>
         <div className="flex items-center gap-2">
@@ -70,10 +104,10 @@ export default function LeadForm() {
           <input
             required
             type="text"
-            name="lastname"
+            name="nom"
             placeholder="Nom"
             className="flex-1 h-12 px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#0367A6] bg-white font-sans"
-            disabled={sent}
+            disabled={isSubmitting}
           />
         </div>
         <div className="flex items-center gap-2">
@@ -84,31 +118,27 @@ export default function LeadForm() {
             name="email"
             placeholder="Votre email"
             className="flex-1 h-12 px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#0367A6] bg-white font-sans"
-            disabled={sent}
+            disabled={isSubmitting}
           />
         </div>
-        <div className="flex flex-col w-full">
-          <div className="flex items-center gap-2">
-            <Phone className="text-[#0367A6]" size={20} />
-            <input
-              required
-              type="tel"
-              name="phone"
-              placeholder="Votre téléphone"
-              onChange={() => setPhoneError("")}
-              className={`flex-1 h-12 px-4 py-2 rounded border ${phoneError ? "border-red-400" : "border-blue-200"} focus:outline-none focus:ring-2 focus:ring-[#0367A6] bg-white font-sans`}
-              disabled={sent}
-            />
-          </div>
-          {phoneError && <p className="text-red-500 text-xs mt-1 ml-7">{phoneError}</p>}
+        <div className="flex items-center gap-2">
+          <Phone className="text-[#0367A6]" size={20} />
+          <input
+            required
+            type="tel"
+            name="telephone"
+            placeholder="Votre téléphone"
+            className="flex-1 h-12 px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#0367A6] bg-white font-sans"
+            disabled={isSubmitting}
+          />
         </div>
         <div className="flex items-center gap-2 w-full">
           <Book className="text-[#0367A6] min-w-[20px]" size={20} />
           <select
-            name="formation"
+            name="type_formation"
             required
             className="flex-1 h-12 px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#0367A6] bg-white font-sans w-full"
-            disabled={sent}
+            disabled={isSubmitting}
           >
             <option value="">Type de formation souhaitée</option>
             <option value="intensive">Formation anglais intensive</option>
@@ -119,9 +149,9 @@ export default function LeadForm() {
         <button
           type="submit"
           className="mt-2 w-full bg-[#F3AE02] text-white font-semibold py-3 rounded-lg hover:bg-[#0367A6] hover:text-white transition-colors hover-scale"
-          disabled={sent}
+          disabled={isSubmitting}
         >
-          {sent ? "Merci !" : "Télécharger ma brochure maintenant"}
+          {isSubmitting ? "Envoi en cours..." : "Télécharger ma brochure maintenant"}
         </button>
       </form>
       <p className="text-xs mt-4 text-gray-500 text-center">
