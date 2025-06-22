@@ -1,10 +1,11 @@
-
 import * as React from "react";
+import { useNavigate } from "react-router-dom";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, Book, User } from "lucide-react";
 
 export default function LeadForm() {
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [isSubmitted, setIsSubmitted] = React.useState(false);
 
@@ -42,10 +43,17 @@ export default function LeadForm() {
       });
 
       if (response.ok) {
-        setIsSubmitted(true);
         toast({
           title: "Merci !",
           description: "Votre demande a bien été envoyée ! Un conseiller vous recontactera rapidement.",
+        });
+        
+        // Redirect to thank you page with form data
+        navigate("/thank-you", {
+          state: {
+            formation: data.type_formation,
+            email: data.email
+          }
         });
       } else {
         throw new Error("Erreur lors de l'envoi");
