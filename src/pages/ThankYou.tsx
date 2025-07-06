@@ -1,22 +1,17 @@
+
 import { useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Calendar, Mail, PhoneCall, Star, ArrowUp, CheckCircle } from "lucide-react";
 import Footer from "@/components/landing/Footer";
 
 export default function ThankYou() {
   const location = useLocation();
-  const navigate = useNavigate();
   const formationRequested = location.state?.formation || "";
   const userEmail = location.state?.email || "";
   
-  // If no state is passed, redirect to home page
+  // Scroll to the top of the page when component mounts
   useEffect(() => {
-    if (!location.state) {
-      navigate("/");
-    }
-    
-    // Scroll to the top of the page when component mounts
     window.scrollTo(0, 0);
 
     // Load Calendly script
@@ -25,20 +20,37 @@ export default function ThankYou() {
     script.async = true;
     document.body.appendChild(script);
 
+    // GTM page view event for conversion tracking
+    if (typeof window !== 'undefined' && (window as any).dataLayer) {
+      (window as any).dataLayer.push({
+        'event': 'page_view',
+        'page_title': 'Thank You - Formation Anglais',
+        'page_location': window.location.href,
+        'page_path': '/thank-you'
+      });
+      
+      // Push conversion event for Google Ads
+      (window as any).dataLayer.push({
+        'event': 'conversion',
+        'conversion_type': 'lead_form_submission',
+        'formation_type': formationRequested || 'unknown'
+      });
+    }
+
     return () => {
       // Cleanup script on unmount
       if (document.body.contains(script)) {
         document.body.removeChild(script);
       }
     };
-  }, [location.state, navigate]);
+  }, [formationRequested]);
 
   const getFormationLabel = (value: string) => {
     switch (value) {
       case "intensive": return "Formation anglais intensive";
       case "pro": return "Formation anglais professionnel";
       case "toeic": return "Préparation TOEIC / LINGUASKILL / LILATE";
-      default: return "Formation";
+      default: return "Formation anglais";
     }
   };
 
@@ -176,8 +188,17 @@ export default function ThankYou() {
             </h1>
             
             <p className="text-gray-700 mb-6">
-              Votre brochure pour la <span className="font-semibold">{getFormationLabel(formationRequested)}</span> va 
-              être envoyée à l'adresse <span className="font-semibold">{userEmail}</span> dans les prochaines minutes.
+              {userEmail ? (
+                <>
+                  Votre brochure pour la <span className="font-semibold">{getFormationLabel(formationRequested)}</span> va 
+                  être envoyée à l'adresse <span className="font-semibold">{userEmail}</span> dans les prochaines minutes.
+                </>
+              ) : (
+                <>
+                  Votre demande de brochure pour nos formations d'anglais a bien été prise en compte. 
+                  Vous recevrez bientôt toutes les informations par email.
+                </>
+              )}
             </p>
             
             <div className="flex justify-center">
@@ -201,7 +222,7 @@ export default function ThankYou() {
               </p>
             </div>
 
-            {/* What you'll get section - moved here */}
+            {/* What you'll get section */}
             <div className="mb-8">
               <h3 className="font-semibold text-2xl text-[#0367A6] flex items-center gap-2 mb-6 justify-center">
                 <PhoneCall className="h-6 w-6 text-[#F3AE02]" />
@@ -223,7 +244,7 @@ export default function ThankYou() {
               </div>
             </div>
             
-            {/* Calendly widget - standalone */}
+            {/* Calendly widget */}
             <div className="flex flex-col justify-center items-center">
               <div className="flex items-center gap-2 mb-6">
                 <Calendar className="h-8 w-8 text-[#0367A6]" />
