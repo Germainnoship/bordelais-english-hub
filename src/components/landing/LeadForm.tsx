@@ -9,6 +9,37 @@ export default function LeadForm() {
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [isSubmitted, setIsSubmitted] = React.useState(false);
+  const [phoneError, setPhoneError] = React.useState("");
+
+  // Validate French phone number
+  const validatePhoneNumber = (phone: string): boolean => {
+    // Remove all spaces and special characters except +
+    const cleanPhone = phone.replace(/[\s\-\.]/g, '');
+    
+    // Check for +33 format (international)
+    if (cleanPhone.startsWith('+33')) {
+      // Should be +33 followed by 9 digits
+      const withoutPrefix = cleanPhone.substring(3);
+      return /^[1-9]\d{8}$/.test(withoutPrefix);
+    }
+    
+    // Check for 06 or 07 format (mobile)
+    if (cleanPhone.startsWith('06') || cleanPhone.startsWith('07')) {
+      // Should be exactly 10 digits
+      return /^0[67]\d{8}$/.test(cleanPhone);
+    }
+    
+    return false;
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const phone = e.target.value;
+    if (phone && !validatePhoneNumber(phone)) {
+      setPhoneError("Veuillez entrer un numéro de téléphone valide (06, 07 ou +33)");
+    } else {
+      setPhoneError("");
+    }
+  };
 
   // Get gclid from URL parameters
   const getGclid = () => {
@@ -18,9 +49,17 @@ export default function LeadForm() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitting(true);
     
     const formData = new FormData(e.currentTarget);
+    const telephone = formData.get("telephone") as string;
+    
+    // Validate phone number before submission
+    if (!validatePhoneNumber(telephone)) {
+      setPhoneError("Veuillez entrer un numéro de téléphone valide (06, 07 ou +33)");
+      return;
+    }
+    
+    setIsSubmitting(true);
     const gclid = getGclid();
     
     const data = {
@@ -142,16 +181,25 @@ export default function LeadForm() {
             disabled={isSubmitting}
           />
         </div>
-        <div className="flex items-center gap-2">
-          <Phone className="text-[#0367A6]" size={20} />
-          <input
-            required
-            type="tel"
-            name="telephone"
-            placeholder="Votre téléphone"
-            className="flex-1 h-12 px-4 py-2 rounded border border-blue-200 focus:outline-none focus:ring-2 focus:ring-[#0367A6] bg-white font-sans"
-            disabled={isSubmitting}
-          />
+        <div className="flex flex-col gap-1">
+          <div className="flex items-center gap-2">
+            <Phone className="text-[#0367A6]" size={20} />
+            <input
+              required
+              type="tel"
+              name="telephone"
+              placeholder="Votre téléphone"
+              className={`flex-1 h-12 px-4 py-2 rounded border focus:outline-none focus:ring-2 focus:ring-[#0367A6] bg-white font-sans ${
+                phoneError ? 'border-red-500' : 'border-blue-200'
+              }`}
+              disabled={isSubmitting}
+              onChange={handlePhoneChange}
+              onBlur={handlePhoneChange}
+            />
+          </div>
+          {phoneError && (
+            <p className="text-red-500 text-sm ml-7">{phoneError}</p>
+          )}
         </div>
         <div className="flex items-center gap-2 w-full">
           <Book className="text-[#0367A6] min-w-[20px]" size={20} />
