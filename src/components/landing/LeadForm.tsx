@@ -210,9 +210,9 @@ export default function LeadForm() {
             disabled={isSubmitting}
           >
             <option value="">Type de formation souhaitée</option>
-            <option value="intensive">Formation anglais intensive</option>
-            <option value="pro">Formation anglais professionnel</option>
-            <option value="toeic">Préparation TOEIC / LINGUASKILL / LILATE</option>
+            <option value="formation anglais intensive">Formation anglais intensive</option>
+            <option value="formation anglais professionnel">Formation anglais professionnel</option>
+            <option value="preparation anglais toeic-lilate-linguaskill">Préparation TOEIC / LINGUASKILL / LILATE</option>
           </select>
         </div>
         <button
