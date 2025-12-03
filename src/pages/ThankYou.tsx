@@ -1,5 +1,4 @@
-
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Calendar, Mail, PhoneCall, Star, ArrowUp, CheckCircle } from "lucide-react";
@@ -9,6 +8,8 @@ export default function ThankYou() {
   const location = useLocation();
   const formationRequested = location.state?.formation || "";
   const userEmail = location.state?.email || "";
+  const videoRef = useRef<HTMLDivElement>(null);
+  const [isVideoVisible, setIsVideoVisible] = useState(false);
   
   // Scroll to the top of the page when component mounts
   useEffect(() => {
@@ -44,6 +45,24 @@ export default function ThankYou() {
       }
     };
   }, [formationRequested]);
+
+  // Intersection Observer for video autoplay
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isVideoVisible) {
+          setIsVideoVisible(true);
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [isVideoVisible]);
 
   const getFormationLabel = (value: string) => {
     switch (value) {
@@ -245,18 +264,20 @@ export default function ThankYou() {
             </div>
             
             {/* Video section */}
-            <div className="mb-10">
+            <div className="mb-10" ref={videoRef}>
               <div className="aspect-video w-full max-w-3xl mx-auto rounded-lg overflow-hidden shadow-lg">
-                <iframe
-                  src="https://player.vimeo.com/video/1143091909?badge=0&autopause=0&player_id=0&app_id=58479"
-                  width="100%"
-                  height="100%"
-                  frameBorder="0"
-                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                  allowFullScreen
-                  title="Langues Faciles - Présentation"
-                  className="w-full h-full"
-                ></iframe>
+                {isVideoVisible && (
+                  <iframe
+                    src="https://www.youtube.com/embed/UwzeGm4KkS0?autoplay=1&mute=1&rel=0"
+                    width="100%"
+                    height="100%"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    title="Langues Faciles - Présentation"
+                    className="w-full h-full"
+                  ></iframe>
+                )}
               </div>
             </div>
 
