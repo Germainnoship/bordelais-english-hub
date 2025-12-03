@@ -244,6 +244,22 @@ export default function ThankYou() {
               </div>
             </div>
             
+            {/* Video section */}
+            <div className="mb-10">
+              <div className="aspect-video w-full max-w-3xl mx-auto rounded-lg overflow-hidden shadow-lg">
+                <iframe
+                  src="https://player.vimeo.com/video/1143091909?badge=0&autopause=0&player_id=0&app_id=58479"
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                  allowFullScreen
+                  title="Langues Faciles - Présentation"
+                  className="w-full h-full"
+                ></iframe>
+              </div>
+            </div>
+
             {/* Calendly widget */}
             <div className="flex flex-col justify-center items-center">
               <div className="flex items-center gap-2 mb-6">
